@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>다양한 폼 컨트롤</h2>
+    <table border="1" cellspacing="0" cellpadding="10">
+        <tr>
+            <td>아이디</td>
+            <td>
+                <form action="" method="get">
+                    <p>
+                        <input type="text" name="ID" value="green" readonly />
+                    </p>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>패스워드</td>
+            <td>
+                <form action="" method="get">
+                    <p>
+                        <input type="password" name="Pass" required />
+                    </p>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>성별</td>
+            <td>
+                <form action="" method="get">
+                    <p>
+                        <input type="radio" name="gender" value="여자">여자
+                        <input type="radio" name="gender" value="남자">남자
+                    </p>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>사진등록</td>
+            <td>
+                <form action="" method="get">
+                    <p>
+                        <input type="file" name="photo">
+                    </p>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>수신설정</td>
+            <td>
+                <form action="" method="get">
+                    <p>
+                        <input type="checkbox" name="access" value="메일허용">메일수신허용
+                        <input type="checkbox" name="access" value="sns허용">sns수신허용
+                    </p>
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <form action="" method="get">
+                    <p>
+                        <!-- <input type="submit" value="확인">
+                        <input type="reset" value="취소"> -->
+                        <button type="submit">확인</button>
+                        <button type="reset">취소</button>
+                    </p>
+                </form>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

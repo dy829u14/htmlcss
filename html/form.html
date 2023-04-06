@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>사용자입력 form태그</h2>
+    <form action="" method="get">
+        <p>아이디 <input type="text" name="userID" placeholder="아이디입력"></p>
+        <p>패스워드 <input type="password" name="userpass" placeholder="비밀번호입력"></p>
+        <p>성별 남<input type="radio" name="gender" value="남성" checked>
+        여 <input type="radio" name="gender" value="여성"></p>
+        <p>
+            직업
+            <select name="job">
+                <option value="a">강사</option>
+                <option value="b">학생</option>
+                <option value="c">회사원</option>
+            </select>
+        </p>
+        <p>
+            취미
+            책읽기<input type="checkbox" name="hobby" value="책읽기">
+            영화<input type="checkbox" name="hobby" value="영화">
+            게임<input type="checkbox" name="hobby" value="게임">
+        </p>
+        <p>
+            <textarea name="contents" id="contents" cols="30" rows="10"></textarea>
+        </p>
+        <p>
+            <input type="file" name="photo">
+        </p>
+        <p>
+            <input type="submit" value="전송">
+            <input type="reset" value="취소">
+        </p>
+    </form>
+</body>
+</html>

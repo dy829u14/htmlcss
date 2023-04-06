@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        a {text-decoration: none; color: inherit;}
+        li {list-style: none;}
+        body {
+            font-size: 14px;
+            color: #222;
+            font-family: "맑은고딕", sans-serif;
+            line-height: 1.6;
+        }
+        #wrap {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        #header {
+            height: 120px;
+            font-size: 0;
+            padding: 30px 0;
+        }
+        #header h1 {
+            display: inline-block;
+            width: 20%;
+            margin-right:40% ;
+            font-size: 24px;
+        }
+        #header ul {
+            display: inline-block;
+            width: 40%;
+            font-size: 14px;
+        }
+        #header ul li {
+            display: inline-block;
+            width: 23%;
+            text-align: center;
+        }
+        /* 마지막 자식요소만 제외한 나머지 요소 스타일 지정 */
+        #header ul li:not(:last-child) {border-right: 1px solid #ccc;}
+        #contents h2 {
+            text-align: center;
+            padding: 30px;
+            border-bottom: 1px solid #333;
+            margin-bottom: 30px;
+        }
+        #contents1 ul {
+            font-size: 0;
+        }
+        #contents1 li {
+            border: 1px solid #ccc;
+            width: 30%;
+            padding: 20px;
+            display: inline-block;
+            font-size: 14px;
+            text-align: center;
+        }
+        #contents1 li:not(:last-child) {
+            margin-right: 5%;
+        }
+        #contents2 li {
+            border-bottom: 1px solid #ccc;
+            line-height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <h1>Green</h1>
+            <ul>
+                <li><a href="#">menu1</a></li>
+                <li><a href="#">menu2</a></li>
+                <li><a href="#">menu3</a></li>
+                <li><a href="#">menu4</a></li>
+            </ul>
+        </div>
+        <div id="contents">
+            <div id="contents1">
+                <h2>메인 컨텐츠 01</h2>
+                <ul>
+                    <li>
+                        <h3>작은 제목 입니다</h3>
+                        <p>글 적는 부분입니다.</p>
+                        <span>2023.04.06</span>
+                    </li>
+                    <li>
+                        <h3>작은 제목 입니다</h3>
+                        <p>글 적는 부분입니다.</p>
+                        <span>2023.04.06</span>
+                    </li>
+                    <li>
+                        <h3>작은 제목 입니다</h3>
+                        <p>글 적는 부분입니다.</p>
+                        <span>2023.04.06</span>
+                    </li>
+                </ul>
+            </div>
+            <div id="contents2">
+                <h2>공지사항</h2>
+                <ul>
+                    <li>그린컴퓨터 아카데미 소식</li>
+                    <li>그린컴퓨터 아카데미 소식</li>
+                    <li>그린컴퓨터 아카데미 소식</li>
+                    <li>그린컴퓨터 아카데미 소식</li>
+                </ul>
+            </div>
+        </div>
+        <div id="footer">
+            <address>주소 : 울산시 남구 삼산동 557-6 km빌딩 / 그린 대표이사 : 그린</address>
+            <h1>Green</h1>
+        </div>
+    </div>
+</body>
+</html>

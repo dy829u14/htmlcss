@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>테이블태그</title>
+		<meta charset="utf-8"/>
+		<style>
+			#styleTable {
+				border: 1px solid red; border-collapse: collapse;
+			}
+			td {border-bottom: 1px solid red;}
+		</style>
+	</head>
+	<body>
+		<h2>테이블 태그에 대해 알아봅시다</h2>
+		<table id="styleTable">
+			<tr>
+				<td>1행1열</td>
+				<td>1행2열</td>
+			</tr>
+			<tr>
+				<td>2행1열</td>
+				<td>2행2열</td>
+			</tr>			
+			<tr>
+				<td>3행1열</td>
+				<td>3행2열</td>
+			</tr>
+		</table>
+		<h2>셀병합하기</h2>
+		<table border="1" cellpadding="10" cellspacing="0">
+			<tr>
+				<td>1행1열</td>
+				<td>1행2열</td>
+				<td colspan="2">1행3열</td>
+			</tr>
+			<tr>
+				<td rowspan="2">2행1열</td>
+				<td>2행2열</td>
+				<td>2행3열</td>
+				<td>2행4열</td>
+			</tr>
+			<tr>
+				<td>3행2열</td>
+				<td>3행3열</td>
+				<td>3행4열</td>
+			</tr>
+		</table>
+	</body>
+</html>

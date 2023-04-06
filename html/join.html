@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="get">
+        <table border="1" cellpadding=15 cellspacing="0">
+            <tr>
+                <td>이름</td>
+                <td><input type="text" name="username"></td>
+            </tr>
+            <tr>
+                <td>아이디</td>
+                <td><input type="text" name="userid"></td>
+            </tr>
+            <tr>
+                <td>비밀번호</td>
+                <td><input type="password" name="userpass"></td>
+            </tr>
+            <tr>
+                <td>비밀번호확인</td>
+                <td><input type="password" name="userpasscheck"></td>
+            </tr>
+            <tr>
+                <td>이메일</td>
+                <td><input type="text" name="email"> @ 
+                    <select name="email" id="email">
+                        <option value="a">선택</option>
+                        <option value="b">naver.com</option>
+                        <option value="c">hanmail.net</option>
+                    </select></td>
+            </tr>
+            <tr>
+                <td>생년월일</td>
+                <td>
+                    <select name="birth" id="birth">
+                        <option value="1">2023</option>
+                        <option value="0">1990</option>
+                    </select>
+                    <select name="month" id="month">
+                        <option value="0">월</option>
+                        <option value="0">1월</option>
+                        <option value="0">2월</option>
+                        <option value="0">3월</option>
+                    </select>
+                    <select name="day" id="day">
+                        <option value="0">일</option>
+                        <option value="0">27</option>
+                        <option value="0">28</option>
+                        <option value="0">29</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>휴대폰번호</td>
+                <td>
+                    <select name="phone" id="number">
+                        <option value="a">선택</option>
+                        <option value="0">010</option>
+                    </select> - 
+                    <input type="text" name="n" id="n"> - 
+                    <input type="text" name="n" id="n">
+                    <button type="submit">인증번호 발송</button>
+                    <button type="submit">인증번호 재발송</button>
+                </td>
+            </tr>
+            <tr>
+                <td>인증번호 입력</td>
+                <td>
+                    <input type="number" name="n" id="n">
+                    <button type="submit">확인</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
