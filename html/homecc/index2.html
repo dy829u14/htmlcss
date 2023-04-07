@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        * { vertical-align: top; margin: 0; padding: 0; box-sizing: border-box;}
-        li {list-style: none;}
+        * {vertical-align: top; padding: 0; margin: 0; box-sizing: border-box;}
         body {
             font-size: 14px;
             line-height: 1.6;
@@ -19,78 +18,79 @@
             max-width: 1200px;
             margin: 0 auto;
         }
-        h2 {text-align: center; font-size:72px ;}
-        h3 {text-align: center;
-            font-size: 36px;
-            line-height: 1.2;
+        li {list-style: none;}
+        .clearboth::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        h2 {
+            text-align: center;
+            font-size: 72px;
+        }
+        h3 {
+            text-align: center;
+            font-size: 40px;
+            margin: 30px 0;
+        }
+        h3::before {
+            content: "";
+            display: block;
+            width: 120px;
+            height: 5px;
+            background-color: orangered;
+            margin: 0 auto;
+            border-radius: 20%;
+        }
+        h3 span {
+            font-size: 20px;
             font-weight: normal;
-            padding: 20px 0;
-            }
-        h3 span {font-size: 18px;}
+        }
+        #contents1 {
+            border-bottom: 1px solid #333;
+            padding-bottom: 60px;
+            margin-bottom: 30px;
+        }
         #img {
-            display: inline-block;
+            float: left;
             width: 30%;
         }
         #text {
-            display: inline-block;
-            width: 68%;
+            float: right;
+            width: 70%;
         }
-        #text h4 {
-            padding-bottom: 10px;
-        }
-        #text p {padding: 20px 0;}
-        #text dl {
-            width: 30%;
-            margin-left: 70%;
-            text-align: right;
-            padding: 20px;
-        }
-        #text dl dt {
-            display: inline-block;
-            width: 40%;
-        }
-        #text dl dd {
-            display: inline-block;
-            width: 48%;
-        }
-        #contents1 {
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 30px;
-            margin-bottom: 30px;
-        }
-        #divstyle {
-            border-bottom: 1px solid #ccc;
-            padding-bottom:30px ;
-            margin-bottom: 30px;
-
-        }
-        #divstyle ul { 
-            font-size: 0;
-            padding-top: 20px;
+        #text p {margin-top: 10px;}
+        #text ul {
+            margin: 20px 0;
         }
         #divstyle li {
-            display: inline-block;
-            width: 32%;
-            font-size: 14px;
+            float: left;
+            width: 30%;
+            padding-bottom: 40px;
         }
         #divstyle li:not(:last-child) {
-            margin-right: 2%;
+            margin-right: 5%;
         }
-        li>img {
+        dl {
+            float: right;
+            width: 25%;
+        }
+        dl dd {
+            float: left;
+        }
+        dl dt {      
+            float: right;
+            width: 55%;
+        }
+        li span:nth-child(2) {float: right;}
+        #divstyle li > img {
             width: 100%;
+            padding-bottom: 20px;
         }
-        #divstyle p span:nth-child(1) {
-            width: 60%;
-            display: inline-block;
-            padding: 10px;
+        #divstyle h4 {
+            margin-bottom: 30px;
         }
-        #divstyle p span:nth-child(2) {
-            width: 30%;
-            text-align: right;
-            display: inline-block;
-            padding: 10px;
-            margin-left: 8%;
-        }
+        #kim {width: 100%;}
     </style>
 </head>
 <body>
@@ -101,7 +101,7 @@
             <span>러프한 소재와 함께 자연 속의 공간을 풍부하게 경험할 수 있는 오가닉한 스타일</span>
         </h3>
         <!-- 오가닉 디자인 영역 -->
-        <div id="contents1">
+        <div id="contents1" class="clearboth">
             <div id="img">
                 <img src="./images/green_img.gif" alt="">
             </div>
@@ -112,16 +112,19 @@
                         취향을 반영한 스타일입니다. 전체적으로 밝은 아이보리와 베이지, 브라운 컬러를 사용하여 생활에 지친
                          사람들에게 쉼과 힐링을 제공하는 인테리어입니다</p>
                     <ul>
-                        <li>자연 친화적인 공간 연출</li>
+                        <li>자연: 친화적인 공간 연출</li>
                         <li>자재: 티크나 월넛 수종의 바닥재, 텍스처가 살아있는 벽지, 나뭇결의 거친 느낌을 강조한 도어</li>
                         <li>소품: 자연소재 그대로의 스툴, 나뭇가지 형태의 플로어램프, 한국적 저어의 툇마루 공간,
                              모던하게 재해석한 사방탁자</li>
                     </ul>
                 </div>
-                <dl>
-                    <dd>책임디자이너 <br>김미화</dd>
-                    <dt><img src="./images/photo.gif" alt=""></dt>
-                </dl>
+                <div class="clearboth">
+                    <dl>
+                        <dt><img id="kim" src="./images/photo.gif" alt=""></dt>
+                        <dd>책임디자이너 <br>김미화</dd>
+
+                    </dl>
+                </div>    
                 <div>
                     <h4><img src="./images/title03_02.gif" alt=""></h4>
                     <h5><img src="./images/title04.gif" alt=""></h5>
