@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {padding: 0; margin: 0; box-sizing: border-box;}
+        a {text-decoration: none; color: inherit;}
+        li {list-style: none;}
+        body {
+            color: #333;
+            line-height: 1.6;
+            font-size: 14px;
+            background-color: #f1f1f1;
+            padding: 16px;
+        }
+        #header {
+            height: 180px;
+            background-color: #fff;
+            text-align: center;
+            padding-top: 40px;
+            margin-bottom: 16px;
+        }
+        #header h1 {
+            height: 60px;
+        }
+        #header p {
+            height: 50px;
+            padding-bottom: 30px;
+        }
+        #header div {
+            height: 30px;
+            background-color: #333;
+            color: #fff;
+        }
+        #header ul {
+            float: left;
+        }
+        #header ul li {
+            float: left;
+        }
+        #header div>a {
+            float: right;
+        }
+        #header a {
+            padding: 0 20px;
+            line-height: 30px;
+        }
+        #main > div {
+            float: left;
+        }
+        /* block요소를 추가하고 clear 속성을 지정함 */
+        .clearboth::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        #left {
+            width: 75%;
+        }
+        #right {
+            width: 25%;
+            padding-left: 16px;
+        }
+        .whitebox {
+            background-color: #fff;
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+        .imagebox {
+            background-color: #555;
+            color: #fff;
+            padding: 16px;
+        }
+        div.imagebox {
+            margin: 16px;
+            height: 180px;
+        }
+        #right ul {
+            margin: 16px 0;
+        }
+        #footer {
+            text-align: center;
+            background-color: #555;
+            color: #fff;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <h1>My Website</h1>
+            <p>P태그입니다</p>
+            <div>
+                <ul>
+                    <li><a href="">link</a></li>
+                    <li><a href="">link</a></li>
+                    <li><a href="">link</a></li>
+                </ul>
+                <a href="#">link</a>
+            </div>
+        </div>
+        <div id="main" class="clearboth">
+            <div id="left">
+                <div class="whitebox">
+                    <h2>TITLE HEADING</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                    <div class="imagebox">image</div>
+                    <h3>Title Text</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                </div>
+                <div class="whitebox">
+                    <h2>TITLE HEADING</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                    <div class="imagebox">image</div>
+                    <h3>Title Text</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                </div>
+            </div>
+            <div id="right">
+                <div class="whitebox">
+                    <h2>About Me</h2>
+                    <div class="imagebox">image</div>
+                    <p>To take a trivial example, which of us ever undertakes 
+                        laborious physical exercise</p>
+                </div>
+                <div class="whitebox">
+                  <h2>Popular Post</h2>
+                  <ul>
+                    <li class="imagebox">image</li>
+                    <li class="imagebox">image</li>
+                    <li class="imagebox">image</li>
+                  </ul>
+                </div>
+                <div class="whitebox">
+                    <h2>Follow me</h2>
+                    <p>any text...</p>
+                </div>
+            </div>
+        </div>
+        <div id="footer">
+            Footer
+        </div>
+    </div>
+</body>
+</html>

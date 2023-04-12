@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        #wrap {
+            width: 80%;
+            margin: 0 auto;
+        }
+        li {
+            list-style: none;
+        }
+        h1 {
+            text-align: center;
+            margin: 50px 0;
+        }
+        .clearboth::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        #main > li {
+            float: left;
+            width: 16%;
+            line-height: 40px;
+            height: 70px;
+            border-top: 3px solid #333;
+            border-bottom: 1px solid #555;
+            padding-top: 15px;
+            text-align: center;
+        }
+        #main > li:hover {
+            color: red;
+            cursor: pointer;
+        }
+        #main > li:hover .sub{
+            display: block;
+            color: #333;
+        } 
+        .sub {
+            margin-top: 15px;
+            display: none;
+        }
+        .sub li {
+            line-height: 1.6;
+        }
+        .sub li:hover {
+            color: orange;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <h1>GreenMall</h1>
+        <div>
+            <ul id="main" class="clearboth">
+                <li>제품소개
+                    <ul class="sub">
+                        <li>sub1</li>
+                        <li>sub2</li>
+                        <li>sub3</li>
+                    </ul>
+                </li>
+                <li>구매안내
+                    <ul class="sub">
+                        <li>sub1</li>
+                        <li>sub2</li>
+                        <li>sub3</li>
+                    </ul>
+                </li>
+                <li>고객센터
+                    <ul class="sub">
+                        <li>sub1</li>
+                        <li>sub2</li>
+                        <li>sub3</li>
+                    </ul>
+                </li>
+                <li>서비스
+                    <ul class="sub">
+                        <li>sub1</li>
+                        <li>sub2</li>
+                        <li>sub3</li>
+                    </ul>
+                </li>
+                <li>홍보센터
+                    <ul class="sub">
+                        <li>sub1</li>
+                        <li>sub2</li>
+                        <li>sub3</li>
+                    </ul>
+                </li>
+                <li>기업소개
+                    <ul class="sub">
+                        <li>sub1</li>
+                        <li>sub2</li>
+                        <li>sub3</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

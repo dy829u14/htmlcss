@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {max-resolution: 0; padding: 0; box-sizing: border-box;}
+        body > div {
+            width: 500px;
+            height: 400px;
+            background-color: brown;
+            position: relative;
+        }
+        div::before {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 50px;
+            top: 50px;
+            bottom: 50px;
+            right: 50px;
+            background-color: grey;
+            border-left: 1px solid #333;
+            border-right: 1px solid #333;
+            transform: scale(1,0);
+            transition: 0.5s;
+        }
+        div:hover::before {
+            transform: scale(1,1);
+        }
+        div::after {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 50px;
+            top: 50px;
+            bottom: 50px;
+            right: 50px;
+            background-color: grey;
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+            transform: scale(0,1);
+            transition: 0.5s;
+        }
+        div:hover::after {
+            transform: scale(1,1);
+        }
+    </style>
+</head>
+<body>
+    <div>
+
+    </div>
+</body>
+</html>

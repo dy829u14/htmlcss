@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 1000px;
+            height: 800px;
+            background-color: lightblue;
+            background-image: url("../image/puppy.jpg"), url("../image/dog2.jpg");
+            background-repeat: no-repeat, no-repeat;
+            background-position: right bottom, right bottom;
+            background-size: 200px auto, 200px auto;
+            /* background 속기법 - 포지션, 사이즈 겹칠때는 / 사용(포지션 먼저) 배경색은 마지막 */
+            /* background: url("../image/puppy.jpg") no-repeat 50px 100px / auto 400px lightgreen; */
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

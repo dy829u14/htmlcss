@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {padding: 0; margin: 0; box-sizing: border-box;}
+        div {
+            width: 1000px;
+            margin: 100px auto;
+            background-color: tomato;
+            height: 50px;
+        }
+        li {list-style: none;}
+        div > ul > li {
+            float: left;
+            width: 20%;
+            text-align: center;
+            line-height: 50px;
+            color: #fff;
+        }
+        div > ul > li li {
+            line-height: 30px;
+            color: #333;
+        }
+        li ul {
+            display: none;
+        }
+        div의 자식요소 ul의 자식요소 li에 마우스를 올렸을때 마우스 올린 요소의 안에 있는
+        ul요소 display
+        div > ul > li:hover ul {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <ul id="big" class="clearboth">
+            <li>대메뉴1
+                <ul class="small">
+                    <li>서브메뉴</li>
+                    <li>서브메뉴</li>
+                    <li>서브메뉴</li>
+                    <li>서브메뉴</li>
+                </ul>
+            </li>
+            <li>대메뉴2
+                <ul class="small">
+                    <li>서브메뉴</li>
+                    <li>서브메뉴</li>
+                    <li>서브메뉴</li>
+                    <li>서브메뉴</li>
+                </ul>
+            </li>
+            <li>대메뉴3
+                <ul class="small">
+                    <li>서브메뉴</li>
+                    <li>서브메뉴</li>
+                    <li>서브메뉴</li>
+                    <li>서브메뉴</li>
+                </ul>
+            </li>
+            <li>대메뉴4
+                <ul class="small">
+                    <li>서브메뉴</li>
+                    <li>서브메뉴</li>
+                    <li>서브메뉴</li>
+                    <li>서브메뉴</li>
+                </ul>
+            </li>
+            <li>대메뉴5
+                <ul class="small">
+                    <li>서브메뉴</li>
+                    <li>서브메뉴</li>
+                    <li>서브메뉴</li>
+                    <li>서브메뉴</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

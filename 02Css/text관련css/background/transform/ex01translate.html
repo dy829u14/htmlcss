@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent {
+            width: 200px;
+            height: 200px;
+            background-color: beige;
+            display: inline-block;
+            margin: 30px 30px;
+            position: relative;
+        }
+        .children {
+            width: 100px;
+            height: 100px;
+            background-color: tomato;
+            position: relative;
+            top:calc(50% - 50px);
+            left:calc(50% - 50px);
+            transition: 0.5s;
+        }
+ 
+        #c1:hover {
+            transform: translateX(50%);
+        }
+        #c2:hover {
+            transform: translateY(50%);
+        }
+        #c3:hover {
+            transform: scale(1.5);
+        }
+        #c4:hover {
+            transform: scale(0.5);
+        }
+        #c5:hover {
+            transform: skewX(45deg);
+        }
+        #c6:hover {
+            transform: skewY(45deg);
+        }
+        #c7:hover {
+            transform: rotate(135deg);
+        }
+        #c8:hover {
+            transform: rotateX(360deg);
+        }
+    </style>
+</head>
+<body>
+    <div id="top">
+        <div class="parent">
+            <div id="c1" class="children"></div>
+        </div>
+        <div class="parent">
+            <div id="c2" class="children"></div>
+        </div>
+        <div class="parent">
+            <div id="c3" class="children"></div>
+        </div>
+        <div class="parent">
+            <div id="c4" class="children"></div>
+        </div>
+    </div>
+    <div id="bot">
+        <div class="parent">
+            <div id="c5" class="children"></div>
+        </div>
+        <div class="parent">
+            <div id="c6" class="children"></div>
+        </div>
+        <div class="parent">
+            <div id="c7" class="children"></div>
+        </div>
+        <div class="parent">
+            <div id="c8" class="children"></div>
+        </div>
+    </div>
+</body>
+</html>
