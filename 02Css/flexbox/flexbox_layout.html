@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {padding: 0; margin: 0; box-sizing: border-box;}
+        a {color: inherit; text-decoration: none;}
+        li {list-style: none;}
+        body {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #333;
+        }
+        #wrap {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        address {font-style: normal;}
+        #header {
+            padding: 30px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        #header ul {
+            width: 30%;
+            display: flex;
+            justify-content: space-between;            
+        }
+        #contents1 {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
+        #contents1 ul {
+            border-top: 1px solid #333;
+            margin: 20px 0;
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        #contents1 ul li {
+            border: 1px solid #bbb;
+            width: 31%;
+            height: 140px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        #contents2 h2 {
+            text-align: center;
+            border-bottom: 1px solid #333;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+        #contents2 li {
+            border-bottom: 1px solid #bbb;
+            padding: 10px 0;
+        }
+        #footer {
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+      
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <h1>Green</h1>
+            <ul>
+                <li><a href="#">menu1</a></li>
+                <li><a href="#">menu2</a></li>
+                <li><a href="#">menu3</a></li>
+                <li><a href="#">menu4</a></li>
+            </ul>
+        </div>
+        <div id="contents">
+            <div id="contents1">
+                <h2>메인 컨텐츠 01</h2>
+                <ul class="clearboth">
+                    <li>
+                        <h3>작은 제목 입니다</h3>
+                        <p>글 적는 부분입니다.</p>
+                        <span>2023.04.06</span>
+                    </li>
+                    <li>
+                        <h3>작은 제목 입니다</h3>
+                        <p>글 적는 부분입니다.</p>
+                        <span>2023.04.06</span>
+                    </li>
+                    <li>
+                        <h3>작은 제목 입니다</h3>
+                        <p>글 적는 부분입니다.</p>
+                        <span>2023.04.06</span>
+                    </li>
+                </ul>
+            </div>
+            <div id="contents2">
+                <h2>공지사항</h2>
+                <ul>
+                    <li>그린컴퓨터 아카데미 소식</li>
+                    <li>그린컴퓨터 아카데미 소식</li>
+                    <li>그린컴퓨터 아카데미 소식</li>
+                    <li>그린컴퓨터 아카데미 소식</li>
+                </ul>
+            </div>
+        </div>
+        <div id="footer" class="clearboth">
+            <address>주소 : 울산시 남구 삼산동 557-6 km빌딩 / 그린 대표이사 : 그린</address>
+            <h1>Green</h1>
+        </div>
+    </div>
+</body>
+</html>

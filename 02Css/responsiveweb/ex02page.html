@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        li {list-style: none;}
+        #wrap {
+            border: 1px solid #ccc;
+            margin: 16px;
+            padding: 16px;
+        }
+        header {
+            padding-bottom: 20px;
+        }
+        header h1 {
+            text-align: center;
+        }
+        main li {
+            padding-bottom: 30px;
+        }
+        main li img {
+            width: 100%;
+        }
+        main li h3 {
+            margin: 16px 0;
+            background-color: beige;
+            border-top: 1px dotted brown;
+            border-bottom: 1px dotted brown;
+            text-align: center;
+            padding: 16px 0;
+        }
+        footer {
+            text-align: center;
+            color: #fff;
+            background-color: darkslategray;
+            padding: 16px;
+        }
+        .clearboth::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        @media screen and (min-width:768px) {
+            header h1 {
+                float: left;
+                width: 30%;
+            }
+            header div {
+                float: right;
+                width: 60%;
+            }
+            main li {
+                float: left;
+                width: 49%;
+            }
+            main li:first-child {
+                margin-right: 2%;
+            }
+            main li:last-child {
+                display: none;
+            }
+        }
+        @media screen and (min-width: 1024px) {
+            main li {
+                float: left;
+                width: 32%;
+            }
+            main li:not(:last-child) {
+                margin-right: 2%;
+            }
+            main li:last-child {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header class="clearboth">
+            <h1>
+                <img src="./IMG/diy_logo.jpg" alt="">
+            </h1>
+            <div>
+                <h2>다이정글은 업계선두주가로 오랜 실무 경험과 축적된 전문지식을 자랑</h2>
+                <p>DIY와 리폼에 대해 생소한 소비자에게 리폼을 알리고 장려하며 초보자도 쉽게 도전할 수 
+                    있도록 다양한 콘텐츠와 소비자 중심의 쇼핑몰로 거듭나기 위해 노력하고 있습니다.</p>
+            </div>
+        </header>
+        <main>
+            <ul class="clearboth">
+                <li>
+                    <img src="./IMG/diy_item01.jpg" alt="">
+                    <h3>내츄럴 수저꽂이</h3>
+                    <p>내추럴 수저꽃이 입니다. 군더더기 없는 깔끔한 박스 디자인에 앞면 아크릴에 귀여운 수저 그림이 그려져 있어요. 원목나무의 내추럴함을 느낄 수 있는 수저꽃이 입니다.</p>
+                </li>
+                <li>
+                    <img src="./IMG/diy_item01.jpg" alt="">
+                    <h3>우드 사각 컵받침</h3>
+                    <p>내추럴 수저꽃이 입니다. 군더더기 없는 깔끔한 박스 디자인에 앞면 아크릴에 귀여운 수저 그림이 그려져 있어요. 원목나무의 내추럴함을 느낄 수 있는 수저꽃이 입니다.</p>
+                </li>
+                <li>
+                    <img src="./IMG/diy_item01.jpg" alt="">
+                    <h3>정글 삼나무 서류 보관함</h3>
+                    <p>내추럴 수저꽃이 입니다. 군더더기 없는 깔끔한 박스 디자인에 앞면 아크릴에 귀여운 수저 그림이 그려져 있어요. 원목나무의 내추럴함을 느낄 수 있는 수저꽃이 입니다.</p>
+                </li>
+            </ul>
+        </main>
+        <footer>
+            COPYRIGHT(C) 2006-2015 DIYJUNGLE. Allrights reserved DIYJUNGLE
+        </footer>
+    </div>
+</body>
+</html>
