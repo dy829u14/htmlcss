@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            width: 70%;
+            margin: 0 auto;
+            border: 3px solid #ccc;
+            height: 400px;
+            display: flex;
+            /* 아이템배치를 한줄로할건지 여러줄로 할건지지정 */
+            /* nowrap은 한줄로만 wrap은 여러줄 */
+            flex-wrap: wrap;
+            flex-direction: column;
+            /* 주축정렬 */
+            justify-content: flex-end;
+            /* 교차축 정렬 (한줄일때) */
+            align-items: flex-start;
+            /* 교차축 정렬 (여러줄일때) */
+            /* align-content: space-evenly ;  */
+        }
+        .item {
+            width: 40%;
+        }
+        .item:nth-child(1){
+            background-color: blanchedalmond;
+        }
+        .item:nth-child(2){
+            background-color:coral;
+        }
+        .item:nth-child(3){
+            background-color:darkcyan;
+        }
+        .item:nth-child(4){
+            background-color:deeppink;
+        }
+    </style>
+    
+</head>
+<body>
+   <div id="container">
+       <div class="item">item1</div>
+       <div class="item">item2</div>
+       <div class="item">item3</div>
+       <div class="item">item4</div>
+   </div> 
+</body>
+</html>

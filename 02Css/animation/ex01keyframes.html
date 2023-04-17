@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes moveDiv {
+            0% {
+                background-color: tomato;
+                width: 200px;
+                height: 200px;
+                top: 0;
+                left: 0;
+            }
+            12.5% {
+                background-color: aquamarine;
+                width: 600px;
+                height: 200px;
+                top: 0;
+                left: 0;
+            }
+            25% {
+                background-color: aquamarine;
+                width: 200px;
+                height: 200px;
+                top: 0;
+                left: 400px;
+            }
+            37.5% {
+                background-color: skyblue;
+                top: 0;
+                left: 400px;
+                width: 200px;
+                height: 600px;
+            }
+            50% {
+                background-color: skyblue;
+                top: 400px;
+                left: 400px;
+                width: 200px;
+                height: 200px;
+            }
+            62.5% {
+                background-color: pink;
+                top: 400px;
+                left: 0;
+                width: 600px;
+                height: 200px;
+            }
+            75% {
+                background-color: pink;
+                top: 400px;
+                left: 0;
+                width: 200px;
+                height: 200px;
+            }
+            87.5% {
+                background-color: brown;
+                top: 0;
+                left: 0;
+                width: 200px;
+                height: 600px;
+            }
+            100% {
+                background-color: tomato;
+                top: 0;
+                left: 0;
+                width: 200px;
+                height: 200px;
+            }
+        }
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: tomato;
+            position: absolute;
+            left: 0;
+            top: 0;
+            animation-name: moveDiv;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+            animation-delay: 1s;
+            animation-fill-mode: forwards;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
