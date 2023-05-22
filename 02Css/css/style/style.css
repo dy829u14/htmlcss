@@ -1,0 +1,128 @@
+* {margin:0; padding:0; box-sizing: border-box;}
+a {text-decoration: none; color: inherit;}
+img {vertical-align: top;}
+address {font-style: normal;}
+h1,h2,h3,h4,h5,h6 {font-weight: normal;}
+li {list-style: none;}
+body {
+    font-family: "나눔고딕";
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+}
+.inner {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+}
+header ul {
+    display: flex;
+}
+header h1 {
+    font-size: 0;
+    width: 180px;
+    height: 40px;
+    background: url("../images/top_logo.png") center no-repeat;
+    background-size: contain;
+}
+header ul li {
+    padding: 0 20px;
+}
+#visual img {
+    width: 100%;
+}
+#recommend {
+    display: flex;
+    height: 400px;
+}
+#recommend > div:nth-child(1) {
+    width: 50%;
+    background-color: #006ca5;
+    color: #fff;
+    padding: 40px 0 40px 180px;
+}
+#recommend > div:nth-child(1) h2 {
+    font-size: 28px;
+    padding-bottom: 30px;
+}
+#recommend > div:nth-child(2) {
+    width: 50%;
+    background-color: #69b9e4;
+    position: relative;
+}
+#recommend > div:nth-child(2) #re_text {
+    position: absolute;
+    width: 40%;
+    height: 280px;
+    left: 40px;
+    bottom: -40px;
+    background-color: #333;
+    color: #fff;
+    padding: 30px;
+}
+#recommend > div:nth-child(2) h3 {
+    padding-bottom: 20;
+}
+#travel {
+    background-color: #f4fafd;
+    padding: 50px 0;
+    margin-top: 120px;
+    text-align: center;
+}
+#travel h2, #information h2 {
+    font-size: 28px;
+    padding-bottom: 20px;
+}
+#travel ul {
+    padding-top: 60px;
+    display: flex;
+    justify-content: space-between;
+}
+#travel ul li {
+    width: 120px;
+    height: 120px;
+    background-color: #69b9e4;
+    border-radius: 50%;
+    padding-top: 50px;
+    color: #fff;
+}
+#information {
+    text-align: center;
+    padding: 60px 0;
+}
+#information ul {
+    padding-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+#information li {
+    width: 32%;
+    height: 120px;
+    background-color: beige;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column-reverse;
+    color: #fff;
+    padding: 0 20px;
+}
+#information li span {
+    float: right;
+}
+#information li div {
+    background-color: coral;
+    line-height: 30px;
+    text-align: left;
+}
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+}

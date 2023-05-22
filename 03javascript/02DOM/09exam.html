@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0; margin: 0; box-sizing: border-box;
+        }
+        body {
+            position: relative;
+        }
+        li {
+            list-style: none;
+            padding: 50px 30px;
+        }
+        ul {
+            display: flex;
+        }
+        #a {
+            background-color: lightblue;
+        }
+        #b {
+            position: relative;
+            top: 0;
+            left: 0;
+            height: 0;
+            background-color: tomato;
+            transition: 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <div id="a">
+        <ul>
+            <li>list1</li>
+            <li>list2</li>
+            <li>list3</li>
+            <li>list4</li>
+        </ul>
+    </div>
+    <div id="b"></div>
+    <script>
+        let a = document.querySelector("#a");
+        let b = document.querySelector("#b");   
+        a.addEventListener("mouseenter",function() {
+            document.querySelector("#b").style.height = "300px";
+        })
+        b.addEventListener("mouseleave",function() {
+            document.querySelector("#b").style.height = "0px";
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>A 음료수 : 500원</div>
+    <div>B 음료수 : 700원</div>
+    <div>C 음료수 : 1000원</div>
+    <button onclick="buttonclick(100)">100</button>
+    <button onclick="buttonclick(500)">500</button>
+    <button onclick="buttonclick(1000)">1000</button>
+    <p id="money"></p>
+    <p id="select"></p>
+    <script>
+        //버튼 클릭하면 금액을 더해줌
+        let money = 0;
+        
+        function buttonclick(num) {
+            money += num;
+            document.getElementById("money").innerHTML = money;
+            selectCh();
+        }
+        function selectCh() {
+            let selectMenu = "";
+            if(money >= 1000) {
+                selectMenu = "A음료수, B음료수, C음료수";
+            }else if(money >= 700) {
+                selectMenu = "A음료수, B음료수";
+            }else if(money >= 500) {
+                selectMenu = "A음료수";
+            }else {
+                selectMenu = "구매 불가";
+            }
+            document.getElementById("select").innerHTML = selectMenu;
+        }
+    </script>
+</body>
+</html>

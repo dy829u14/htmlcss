@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let year = Number(prompt("년도를 입력하세요"));
+        //4로 나누어 떨어지면 윤년
+        //그 중에 100으로 나누어 떨어지면 평년
+        //그 중에 400으로 나누어 떨어지면 윤년
+        function chyear(year) {
+            let isyear = "평년";
+            if(year%4==0) {
+                if(year%100==0) {
+                    isyear = year%400==0 ? "윤년" : "평년";
+                }else {
+                    isyear = "윤년";
+                }
+            }
+            return isyear;
+        }
+        alert(chyear(year));
+    </script>
+</body>
+</html>

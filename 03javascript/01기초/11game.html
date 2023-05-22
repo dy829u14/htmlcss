@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function gamego() {
+            let user = Math.floor(Math.random()*6)+1;
+            let com = Math.floor(Math.random()*6)+1;
+            //템플릿 리터럴 구문
+            //`문자 ${변수, 2+3}`
+            //"문자" + 변수
+            console.log(`컴퓨터 주사위 : ${com}, 유저 주사위 : ${user}`);
+            if(com==user) {
+                console.log("무승부");
+            }else if(com>user) {
+                console.log("컴퓨터 승리");
+            }else {
+                console.log("유저 승리");
+            }
+        }
+        gamego();
+        
+        
+    </script>
+</body>
+</html>
