@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //급여의 합계 구하기
+        let salaries = {
+            john : 100,
+            Ann : 160,
+            Pete : 130,
+            sum : function() {
+                console.log(this.john+this.Ann+this.Pete)
+            }
+        }
+        salaries.sum();
+        
+        //누산기 만들기
+        //생성자 함수 Accumulator()를 만드세요 / value프로퍼티가 있음
+
+        function Accumulator(value) {
+            this.value = value;
+            this.read = function() {
+                this.value += Number(prompt("더할 값을 입력하세요"));
+            }
+
+        }
+
+        let accumulator = new Accumulator(1);  //최초값 1
+        accumulator.read();  //사용자가 입력한 값을 더해줌
+        accumulator.read();  //사용자가 입력한 값을 더해줌
+        alert(accumulator.value);  //최초값과 사용자가 입력한 모든 값을 더해 출력
+    </script>
+</body>
+</html>

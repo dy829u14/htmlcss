@@ -1,0 +1,323 @@
+* {padding: 0; margin: 0; box-sizing: border-box;}
+a {text-decoration: none; color: inherit;}
+img {vertical-align: top; width: 100%;}
+address {font-style: normal;}
+h1,h2,h3,h4,h5,h6 {font-weight: normal;}
+li {list-style: none;}
+body {
+    font-family: "나눔고딕";
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+}
+.inner {
+    width: 1500px;
+    align-items: center;
+    margin: 0 auto;
+}
+.clearboth::after {
+    display: block;
+    content: "";
+    clear: both;
+}
+h2 {
+    text-align: center;
+    font-size: 36px;
+    padding: 20px 0;
+}
+/* --------------------------------헤더---------------------------------- */
+header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding:30px;
+}
+
+header ul {
+    display: flex;
+}
+header ul li {
+    width: 190px;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+}
+header div:last-child {
+    display: flex;
+}
+header div:last-child span {
+    padding-left: 10px;
+}
+/* --------------------list---------------------- */
+section {
+    width: 100%;
+}
+#list {
+    position: absolute;
+    top: 97px;
+    left: 0;
+    width: 100%;
+    height: 0;
+    z-index: 2;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+    border-top: 1px solid #ccc;
+}
+#list_bg {
+    position: absolute;
+    top: 97px;
+    left: 0;
+    width: 100%;
+    height: 0;
+    z-index: 1;
+    overflow: hidden;
+    background: rgba(51, 85, 179, 0.5);
+    transition: 0.3s;
+}
+#list ul {
+    width: 190px;
+}
+#list ul li {
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+}
+#list ul li:hover {
+    cursor: pointer;
+    color: blue;
+}
+#visual {
+    position: relative;
+}
+.img_txt {
+    position: absolute;
+    left: 100px;
+    bottom: 100px;
+    color: #fff;
+    font-size: 52px;
+}
+.img_txt:not(#a) {
+    opacity: 0;
+}
+#foward {
+    color: #fff;
+    font-size: 52px;
+    position: absolute;
+    right: 100px;
+    bottom: 50%;
+    transition: 0.3s;
+}
+#back {
+    color: #fff;
+    font-size: 52px;
+    position: absolute;
+    left: 100px;
+    bottom: 50%;
+    transition: 0.3s;
+}
+/* -------------------recommend-------------------------- */
+#recommend > div:nth-child(2) {
+    float: left;
+    width: 20%;
+    font-size: 20px;
+    font-family: sans-serif;
+    text-align: center;
+}
+#recommend > div:nth-child(2) ul {
+    padding-top: 10px;
+}
+#recommend > div:nth-child(2) li {
+    padding: 22px;
+    font-weight: bold;
+}
+#recommend > div:nth-child(2) li:hover {
+    background-color: antiquewhite;
+}
+#recommend > div:nth-child(2) li:hover {cursor: pointer;}
+#recommend > div:nth-child(3) {
+    float: left;
+    width: 80%;
+}
+.re_text {
+    position: relative;
+    float: left;
+    width: 50%;
+    height: 418px;
+}
+.re_text h3 {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: #fff;
+    font-size: 24px;
+}
+.re_text h4 {
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.re_text p {
+    display: block;
+    width: 220px;
+    position: absolute;
+    left: 50%;
+    top: 15%;
+    padding: 10px;
+    transform: translateX(-50%);
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: 0.5s;
+    opacity: 0;
+}
+.re_text h4:hover {cursor: pointer;}
+.re_text h4:hover ~p {opacity: 1;}
+#re_right div:nth-child(1) {
+    background: url(./images/recommend_img01.jpg) center no-repeat;
+    background-size: contain;
+}
+#re_right div:nth-child(2) {
+    background: url(./images/recommend_img02.jpg) center no-repeat;
+    background-size: contain;
+}
+#re_right div:nth-child(3) {
+    background: url(./images/recommend_img03.jpg) center no-repeat;
+    background-size: contain;
+}
+#re_right div:nth-child(4) {
+    background: url(./images/recommend_img04.jpg) center no-repeat;
+    background-size: contain;
+}
+/* --------------------travel---------------------- */
+#travel {
+    margin: 30px 0;
+    background-color: lightgoldenrodyellow;
+}
+#travel p {
+    text-align: center;
+    font-size: 20px;
+}
+#travel ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    margin-top: 30px;
+}
+#travel ul li {
+    height: 250px;
+    width: 12%;
+    overflow: hidden;
+}
+#travel ul li img:hover {
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+#travel ul li p {
+  text-align: center;
+  background-color: #fff;
+  font-size: 14px;
+  padding: 8px 0;
+  margin: 2px;
+}
+#travel ul li p:hover {
+    background-color: darkcyan;
+    color: #fff;
+}
+/* -------------------story--------------- */
+#story > p {
+    text-align: center;
+    font-size: 20px;
+    padding-bottom: 20px;
+}
+#story div {
+    width: 50%;
+    float: left;
+}
+#story div p {
+    border: 1px solid #bbb;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+#story div p:hover {
+    background-color: lightcoral;
+}
+/* ----------------info---------------- */
+#information {
+    text-align: center;
+    padding: 60px 0;
+}
+#information p {
+    text-align: center;
+    font-size: 20px;
+}
+#information ul {
+    padding-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+#information li {
+    width: 32%;
+    height: 200px;
+    background-color: beige;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column-reverse;
+    color: #fff;
+    padding: 0 20px;
+}
+#information li span {
+    float: right;
+}
+#information li div {
+    background-color: coral;
+    line-height: 30px;
+    text-align: left;
+    opacity: 0.8;
+    padding: 10px;
+}
+#information li div:hover {
+    opacity: 1;
+}
+#information li:nth-child(1) {
+    background: url(./images/info_img01.jpg) no-repeat 0 0;
+    background-size: 100%;
+}
+#information li:nth-child(2) {
+    background: url(./images/info_img02.jpg) no-repeat 0 0;
+    background-size: 100%;
+}
+#information li:nth-child(3) {
+    background: url(./images/info_img03.jpg) no-repeat 0 0;
+    background-size: 100%;
+}
+#information li:nth-child(4) {
+    background: url(./images/info_img04.jpg) no-repeat 0 0;
+    background-size: 100%;
+}
+#information li:nth-child(5) {
+    background: url(./images/info_img05.jpg) no-repeat 0 0;
+    background-size: 100%;
+}
+#information li:nth-child(6) {
+    background: url(./images/info_img06.jpg) no-repeat 0 0;
+    background-size: 100%;
+}
+/* ------------------footer----------------- */
+footer {
+    border-top: 1px solid #ccc;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100px;
+}

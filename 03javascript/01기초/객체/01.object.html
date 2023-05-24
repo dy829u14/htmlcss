@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let user = {
+            name: "green",
+            age: 30,
+            sayHi: function() {
+                console.log(this.name);
+            }
+        }
+        // console.log(user.name);
+        // console.log(user["age"]);
+        user.isAdmin = true;
+        console.log(user);
+        delete user.age;
+        console.log(user);
+        //메소드 호출
+        user.sayHi();
+        function myFun() {
+            console.log("aaaa");
+        }
+        myFun();
+
+        function User(name,age,phone) {
+            this.name = name;
+            this.age = age;
+            this.phone = phone;
+            this.sayHi = function() {
+                console.log("내 이름은"+this.name);
+            }
+        }
+        let user1 = new User("철수",20,"010-1254-4856");
+        let user2 = new User("짱구",23,"010-1413-9415");
+        let user3 = new User("유리",27,"010-6422-0055");
+
+        let user4 = {
+            name: "철수",
+            age: 21,
+            phone: "010-4848-7778",
+            sayHi: function() {
+                console.log("내 이름은"+this.name);
+            }
+        }
+        let user5 = {
+            name: "지영",
+            age: 29,
+            phone: "010-5586-3339",
+            sayHi: function() {
+                console.log("내 이름은"+this.name);
+            }
+        }
+        console.log(user1);
+        console.log(user2);
+        console.log(user3);
+        console.log(user4);
+        console.log(user5);
+    </script>
+</body>
+</html>

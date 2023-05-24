@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let scores = [85,65,75,80,90,95];
+        //find(), filter(), map()
+        //find() 배열에서 해당하는 하나의 값을 찾으면 그 값을 리턴하고 종료
+        //filter() 배열에서 조건에 맞는 배열요소를 새로운 배열로 리턴
+        //map() 배열의 요소를 다른 형태로 변경해서 새로운 배열을 리턴
+        let scores2 = scores.filter(v => v > 80);
+        let score = scores.find(function(v) {
+            return v >=90
+        })
+        let scores3 = scores.map(v=> String(v));
+
+        console.log(scores2);
+        console.log(score);
+        console.log(scores3);
+        
+        scores.forEach(v=>console.log(v));
+
+        //생성자 함수
+        function Student(name, age, score) {
+            this.name = name;
+            this.age = age;
+            this.score = score;
+        }
+        let students = [
+            new Student("재훈", 32, 80),
+            new Student("수민", 26, 85),
+            new Student("세영", 31, 75),
+            new Student("재원", 22, 70),
+            new Student("상진", 24, 60),
+        ];
+        console.log(students);
+        //75 이상만 students2배열
+        let students2 = students.filter(student => student.score >= 75);
+        //학생 이름만 새로운 배열로
+        let names = students.map(student=> student.name).join();
+        console.log("75 이상만 있는 배열 : "+students2);
+        console.log("학생이름만 있는 배열 : "+names);
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="list"></ul>
+    <script>
+        function Burger(name, price, size) {
+            this.name = name;
+            this.price = price;
+            this.size = size;
+        }
+        let burgers = [
+            new Burger("새우버거", 5000, "big"),
+            new Burger("불고기버거", 4500, "regular"),
+            new Burger("주니어불고기버거", 3500, "small"),
+            new Burger("치즈버거", 5500, "regular"),
+            new Burger("스테이크버거", 7000, "big"),
+            new Burger("치킨버거", 5500, "regular"),
+            new Burger("야채버거", 4500, "regular"),
+            new Burger("주니어새우버거", 3000, "small"),
+        ]
+        let regular = burgers.filter(burger => burger.size == "regular");
+        console.log(regular);
+        
+        let names = burgers.map(burger => burger.name);
+        console.log(names);
+
+        let expensive = burgers.filter(burger=>burger.price >= 5000);
+        console.log(expensive);
+
+        let steak = burgers.find(burger=>burger.name == "스테이크버거");
+        console.log(steak);
+
+        let burgerUl = [];
+
+        for(let burger of burgers) {            
+            burgerUl.push("<li>"+burger.name+", "+burger.price+", "+burger.size+"</li>");
+        }
+        document.querySelector("#list").innerHTML = burgerUl.join("");
+    </script>
+</body>
+</html>
