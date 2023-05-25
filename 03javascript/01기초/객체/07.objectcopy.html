@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let user = {
+            name : "green",
+            age : 20
+        }
+        // let user2 = user;           주소번지 복사
+        // user.name = "bbb";
+        // console.log(user);
+        // console.log(user2);
+        let user3 = {};
+        for(let a in user) {
+            user3[a] = user[a];
+        }
+        user.name = "bbb";
+        console.log(user);
+        console.log(user3);
+
+        //Object.assign()
+        let clone = {};
+        Object.assign(clone, user);
+        console.log(clone);
+
+        let clone2 = Object.assign({}, user);
+        let dog1 = {
+            name : "구름",
+            age : 2
+        }
+        let dog2 = {
+            color : "흰색",
+            name : "솜"
+        }
+        Object.assign(dog1, dog2);
+        console.log(dog1);
+
+        //스프레드 구문 요소를 펼쳐줌
+        let dog3 = {...dog1, color : "흰색"};
+        console.log(dog3);
+    </script>
+</body>
+</html>

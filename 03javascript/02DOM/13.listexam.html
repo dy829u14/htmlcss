@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        li {list-style: none;}
+        .clearboth::after {
+            display: block;
+            content: "";
+            clear: both;
+        }
+        header {
+            background-color: pink;
+            height: 150px;
+        }
+        header div {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        header div:nth-child(1):hover {cursor: pointer;}
+        header span{
+            display: block;
+            width: 80px;
+            height: 6px;
+            background-color: #fff;
+            margin: 5px;
+            border-radius: 10%;
+        }
+        header h2 {
+            text-align: center;
+            color: #fff;
+            font-size: 50px;
+            padding-top: 35px;
+        }
+        section {
+            width: 0;
+            height: 100vh;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        section div:nth-child(1) {
+            float: left;
+            width: 62%;
+            height: 150px;
+            border: 1px solid #bbb;
+            background-color: #fff;
+        }
+        section div:nth-child(2) {
+            float: left;
+            background-color: tomato;
+            width: 38%;
+            height: 150px;
+            border: 1px solid #bbb;
+            text-align: center;
+            color: #fff;
+            font-size: 24px;
+            padding-top: 55px;
+        }
+        section div:nth-child(2):hover {cursor: pointer;}
+        section ul {        
+            background-color: #fff;
+            border-top: 1px solid #bbb;
+            border-right: 1px solid #bbb;
+            overflow: hidden;
+            height: 50px;
+        }
+        section > ul > li {
+            background-color: #eee;
+            border-bottom: 1px solid #bbb;
+            padding: 10px 20px;
+            position: relative;
+            top: -200px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <h2>LOGO</h2>
+    </header>
+    <section class="clearboth">
+        <div></div>
+        <div>메뉴닫기</div>
+        <ul>회사소개
+            
+            <li>서브메뉴1</li>
+            <li>서브메뉴2</li>
+            <li>서브메뉴3</li>
+            <li>서브메뉴4</li>
+        </ul>
+        <ul>투자정보
+            
+            <li>서브메뉴1</li>
+            <li>서브메뉴2</li>
+            <li>서브메뉴3</li>
+            <li>서브메뉴4</li>
+        </ul>
+        <ul>홍보센터
+            
+            <li>서브메뉴1</li>
+            <li>서브메뉴2</li>
+            <li>서브메뉴3</li>
+            <li>서브메뉴4</li>
+        </ul>
+        <ul>인재채용
+            
+            <li>서브메뉴1</li>
+            <li>서브메뉴2</li>
+            <li>서브메뉴3</li>
+            <li>서브메뉴4</li>
+        </ul>
+        <ul>교츅신청
+            
+            <li>서브메뉴1</li>
+            <li>서브메뉴2</li>
+            <li>서브메뉴3</li>
+            <li>서브메뉴4</li>
+        </ul>
+    </section>
+    <script>
+        let menu = document.querySelector("header").querySelector("div:nth-child(1)");
+        let list = document.querySelector("section");
+        let closed = document.querySelector("section").querySelector("div:nth-child(2)");
+
+        menu.addEventListener("click", function() {
+            list.style.width = "500px";
+        })
+        closed.addEventListener("click", function() {
+            list.style.width = "0px";
+        })
+        let ul1 = document.querySelector("section").querySelector("ul:nth-child(3)");
+        let li1 = document.querySelector("section").querySelector("ul:nth-child(3)").querySelectorAll("li");
+        ul1.addEventListener("mouseenter", function() {
+            ul1.style.height = "200px";
+            li1.style.transform = "translateY(200px)";
+        })
+
+        
+    </script>
+</body>
+</html>

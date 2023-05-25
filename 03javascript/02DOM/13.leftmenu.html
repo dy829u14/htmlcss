@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box;}
+        header {
+            background-color: pink;
+            line-height: 80px;
+            text-align: center;
+            color: #fff;
+        }
+        header div {
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+        }
+        header div span {
+            width: 40%;
+            height: 3px;
+            background-color: #fff;
+            margin: 3px 0;
+        }
+        #blackbg {
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            left: 0;
+            top: 0;
+            background-color: rgba(0,0,0,0.4);
+            opacity: 0;
+            transition: 0.5s;
+        }
+        #blackbg.on {
+            opacity: 1;
+        }
+        #leftmenu {
+            position: absolute;
+            left: -250px;
+            top: 0;
+            width: 250px;
+            height: 100vh;
+            background: #fff;
+            z-index: 3;
+            transition: 0.5s;
+        }
+        #leftmenu.on {
+            left: 0;
+        }
+        li { list-style: none;}
+        #leftmenu div {
+            height: 80px;
+            text-align: right;
+            line-height: 80px;
+            padding-right: 30px;
+        }
+        #leftmenu > ul > li {
+            line-height: 34px;
+            font-size: 14px;
+            border-bottom:1px solid #ccc;
+        }
+        #leftmenu ul ul {
+            height: 0;
+            overflow: hidden;
+            transition: 0.5s;
+        }
+        #leftmenu ul ul.on {
+            height: 96px;
+        }
+        #leftmenu > ul > li li {
+            line-height: 24px;
+            border-top:1px solid #ccc;
+            background-color:#eee;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <h1>Green</h1>
+    </header>
+    <div id="leftmenu">
+        <div><span id="close">닫기</span></div>
+        <ul>
+            <li>대메뉴1
+                <ul>
+                    <li>서브메뉴1</li>
+                    <li>서브메뉴2</li>
+                    <li>서브메뉴3</li>
+                    <li>서브메뉴4</li>
+                </ul>
+            </li>
+            <li>대메뉴2
+                <ul>
+                    <li>서브메뉴1</li>
+                    <li>서브메뉴2</li>
+                    <li>서브메뉴3</li>
+                    <li>서브메뉴4</li>
+                </ul>
+            </li>
+            <li>대메뉴3
+                <ul>
+                    <li>서브메뉴1</li>
+                    <li>서브메뉴2</li>
+                    <li>서브메뉴3</li>
+                    <li>서브메뉴4</li>
+                </ul>
+            </li>
+            <li>대메뉴4
+                <ul>
+                    <li>서브메뉴1</li>
+                    <li>서브메뉴2</li>
+                    <li>서브메뉴3</li>
+                    <li>서브메뉴4</li>
+                </ul>
+            </li>
+            <li>대메뉴5
+                <ul>
+                    <li>서브메뉴1</li>
+                    <li>서브메뉴2</li>
+                    <li>서브메뉴3</li>
+                    <li>서브메뉴4</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div id="blackbg"></div>
+    <script>
+        //1.왼쪽 div를 클릭하면 leftmenu 요소에 on클래스를 붙여
+        //blackbg요소에 on클래스를 붙여
+        //2.#close 를 클릭하면 leftmenu 요소에 on클래스를 떼
+        //blackbg요소에 on클래스를 떼
+        let div = document.querySelector("header div");
+        let leftmenu = document.querySelector("#leftmenu");
+        let blackbg = document.querySelector("#blackbg");
+        let close = document.querySelector("#close");
+        let lis = document.querySelectorAll("#leftmenu>ul>li")
+        div.addEventListener("click",function(){
+            leftmenu.classList.add("on");
+            blackbg.classList.add("on");
+        })
+        close.addEventListener("click",function(){
+            leftmenu.classList.remove("on");
+            blackbg.classList.remove("on");
+            lis.forEach((li, index)=>{
+                li.querySelector("ul").classList.remove("on");
+            })
+        })
+        lis.forEach((li, index)=>{
+            li.addEventListener("click",function(){
+                li.querySelector("ul").classList.toggle("on");
+            });
+        })
+    </script>
+</body>
+</html>
