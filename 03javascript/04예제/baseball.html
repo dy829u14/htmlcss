@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {padding: 0; margin: 0; box-sizing: border-box;}
+        #main-board {
+            width: 40%;
+            height: 15vh;
+            background-color: #ccc;
+            display: flex;
+        }
+        #round {
+            width: 10%;
+            height: 100%;
+            background-color: antiquewhite;
+        }
+        #score {
+            width: 50%;
+            height: 100%;
+        }
+        #score div:nth-child(1) {
+            width: 100%;
+            height: 50%;
+            border-bottom:1px solid #ccc;
+        }
+        #sbo {
+            width: 20%;
+            height: 100%;
+            background-color: bisque;
+        }
+        /* ------------------miniMap----------------------*/
+        #miniMap {
+            position: relative;
+            background-color: tomato;
+            width: 20%;
+            height: 100%;
+        }
+        #miniMap div:nth-child(1) {
+            position: absolute;
+            top: 50%;
+            right: 10%;
+            transform: translateY(-50%);
+            background-color: #fff;
+            width: 20px;
+            height: 20px;
+        }
+        #miniMap div:nth-child(2) {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #fff;
+            width: 20px;
+            height: 20px;
+        }
+        #miniMap div:nth-child(3) {
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            transform: translateY(-50%);
+            background-color: #fff;
+            width: 20px;
+            height: 20px;
+        }
+        #miniMap div:nth-child(4) {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #fff;
+            width: 20px;
+            height: 20px;
+        }
+        #main div:nth-child(1) {
+            position: absolute;
+            bottom: 10%;
+            left: 60%;
+            width: 200px;
+            height: 400px;
+            background-color: aqua;
+        }
+        #main div:nth-child(2) {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 100px;
+            height: 100px;
+            background-color: black;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="main-board">
+        <div id="round">
+
+        </div>
+        <div id="score">
+            <div>
+                <div id="username"></div>
+                <div id="user-score"></div>
+            </div>
+            <div>
+                <div id="comname"></div>
+                <div id="computer-score"></div>
+            </div>
+        </div>
+        <div id="miniMap">
+            <div class="base"></div>
+            <div class="base"></div>
+            <div class="base"></div>
+            <div class="base"></div>
+        </div>
+        <div id="sbo">
+
+        </div>
+    </div>
+    <div id="wrap">
+        <div id="main">
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <script>
+        let base = document.querySelectorAll(".base");
+        
+        base.classList.add("on");
+    </script>
+</body>
+</html>

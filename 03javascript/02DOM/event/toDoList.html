@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Document</title>
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        li {list-style: none;}
+        header {
+            width: 100%;
+            max-width: 1000px;
+            height: 300px;
+            background-color: cadetblue;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h2 {
+            margin-top: 80px;
+            color: #fff;
+            font-size: 38px;
+        }
+        div {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+        }
+        input {
+            width: 800px;
+            line-height: 36px;
+            border-radius: 18px;
+            outline: none;
+            border: none;
+        }
+        button {
+            width: 36px;
+            line-height: 36px;
+            border-radius: 50%;
+            outline: none;
+            border: none;
+            margin-left: 10px;
+            font-size: 35px;
+            color: cadetblue;
+            background-color: #fff;
+        }
+        ul li {
+            padding: 10px 20px;
+            background-color: #eee;
+            border-bottom: 1px solid #bbb;
+            width: 100%;
+            max-width: 1000px;
+            display: flex;
+            justify-content: space-between;
+        }
+        #todos {margin: 0 auto;
+            width: 100%;
+            max-width: 1000px;}
+    </style>
+</head>
+<body>
+    <header>
+        <h2>To Do List</h2>
+        <div>
+            <input type="text" id="inputtext">
+            <button>+</button>
+        </div>
+    </header>
+    <ul id="todos">
+        
+    </ul>
+    <script>
+        //+버튼을 클릭했을때 ul에 li를 추가
+        //li내용은 input에 입력한 값 (value)
+        //변수 준비 btn, input, ul
+        let btn = document.querySelector("button");
+        let input = document.querySelector("input");
+        let ul = document.querySelector("#todos");
+
+        btn.addEventListener("click", function() {
+            if(!input.value) {
+                return;
+            }
+            let li = document.createElement("li");
+            li.innerHTML = input.value+"<span>X</span>";
+            ul.append(li);
+            spanEvent();
+            input.value = "";
+        })
+        function spanEvent() {
+            let spans = document.querySelectorAll("li span");
+            if(!spans) {return;}
+            spans.forEach(span=> {
+                span.addEventListener("click",function() {
+                    this.parentElement.remove();
+                })
+            })
+        }
+    </script>
+</body>
+</html>

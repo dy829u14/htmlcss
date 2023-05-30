@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        header {
+            background-color: cadetblue;
+            width: 100%;
+            text-align: center;
+            padding: 50px 0;
+            color: #fff;
+        }
+        body > div {
+            width: 200px;
+            height: 300px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+        #quiz {
+            font-size: 60px;
+        }
+        input {
+            width: 100%;
+            line-height: 40px;
+        }
+        div > div:nth-child(3) {
+            display: flex;
+            width: 100%;
+            justify-content: space-around;
+        }
+        button {
+            width: 100%;
+            line-height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header> <h1>타자게임</h1></header>
+    <div>
+        <div id="quiz"></div>
+        <input type="text" name="" id="">
+        <div>
+            <p></p>
+        </div>
+        <button> 게임시작</button>
+    </div>
+    <script>
+        let array = ["class","java","water","fire","script"]
+        let button = document.querySelector("button");
+        let input = document.querySelector("input");
+        let quiz = document.querySelector("#quiz");
+        let p = document.querySelector("p");
+
+        quiz.innerHTML = array[Math.floor(Math.random()*5)];
+        
+        function play() {
+            quiz.innerHTML = array[Math.floor(Math.random()*5)];
+        }
+        button.addEventListener("click", function() {
+            play();
+        })
+        input.addEventListener("input", function() {
+            if(input.value==array[Math.floor(Math.random()*5)]) {
+                play();
+                input.value="";
+            }
+        })
+        let second = 20;
+        let score = 0;
+        let timer = setInterval(function() {
+            num--;
+            p.innerHTML = "남은시간 : "+num+" 점수 : "+score+"점";
+            numCheck();
+        }, 1000)
+        function numCheck() {
+            if(num==0) {
+                clearInterval(timer);
+            }
+        }
+    </script>
+</body>
+</html>

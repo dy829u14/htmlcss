@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        body {
+            width: 100%;
+            height: 100vh;
+        }
+        #frame {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);            
+            width: 700px;
+            height: 450px;
+            overflow: hidden;
+        }
+        #flow {
+            position: absolute;
+            left:0;
+            top:0;
+            display: flex;
+            transition: 0.5s;
+        }
+        #prevbtn {
+            width: 80px;
+            height: 80px;
+            background-color: deepskyblue;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            color: #fff;
+            text-align: center;
+            line-height: 80px;
+            margin-left: -430px;
+        }
+        #nextbtn {
+            width: 80px;
+            height: 80px;
+            background-color: deepskyblue;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            color: #fff;
+            text-align: center;
+            line-height: 80px;
+            margin-left: 430px;
+        }
+        #indi {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #indi span {
+            font-size: 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: tomato;
+            margin: 0 8px;
+        }
+        #indi span.on {
+            background-color: cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="prevbtn">이전</div>
+    <div id="nextbtn">다음</div>
+    <div id="frame">
+        <div id="flow" style="left:0px">
+            <div><img src="images/photo01.gif" alt=""></div>
+            <div><img src="images/photo02.gif" alt=""></div>
+            <div><img src="images/photo03.gif" alt=""></div>
+        </div>
+        <div id="indi"></div>
+    </div>
+    <script>
+        let flow = document.querySelector("#flow");
+        let prevbtn = document.querySelector("#prevbtn");
+        let nextbtn = document.querySelector("#nextbtn");
+        let timer;
+        let imgs = document.querySelectorAll("#flow div");
+        let indi = document.querySelector("#indi");
+        let spanstr = "";
+        
+
+        //인디게이터 생성
+        imgs.forEach((img,index)=>{
+            spanstr = spanstr+`<span>${index}</span>`;
+        })
+        indi.innerHTML = spanstr;
+        let indis = document.querySelectorAll("#indi span");
+
+        //인디게이터 클릭
+        indis.forEach((span, index)=>{
+            span.addEventListener("click", function() {
+                flow.style.left = `${index*-700}px`;
+            });
+        })
+
+        function stop() {
+            clearInterval(timer);
+        }
+        function start() {
+            timer = setInterval(function() {
+            if(flow.style.left === "0px") {
+                flow.style.left = "-700px";
+                indis[0].classList.add("on");
+                indis[1].classList.remove("on");
+                indis[2].classList.remove("on");
+            } else if(flow.style.left === "-700px") {
+                flow.style.left = "-1400px";
+                indis[1].classList.add("on");
+                indis[0].classList.remove("on");
+                indis[2].classList.remove("on");
+            } else if(flow.style.left === "-1400px") {
+                flow.style.left = "0px";
+                indis[2].classList.add("on");
+                indis[1].classList.remove("on");
+                indis[0].classList.remove("on");
+            }
+        }, 2000)
+        }
+        start();
+
+        prevbtn.addEventListener("mouseenter", function() {
+            stop();
+        })
+        prevbtn.addEventListener("mouseleave", function() {
+            start();
+        })
+        nextbtn.addEventListener("mouseenter", function() {
+            stop();
+        })
+        nextbtn.addEventListener("mouseleave", function() {
+            start();
+        })
+        flow.addEventListener("mouseenter", function() {
+            stop();
+        })
+        flow.addEventListener("mouseleave", function() {
+            start();
+        })
+
+        prevbtn.addEventListener("click", function() {
+            if(flow.style.left === "0px") {
+                flow.style.left = "-1400px";
+                indis[1].classList.add("on");
+                indis[0].classList.remove("on");
+                indis[2].classList.remove("on");
+            } else if(flow.style.left === "-1400px") {
+                flow.style.left = "-700px";
+                indis[0].classList.add("on");
+                indis[1].classList.remove("on");
+                indis[2].classList.remove("on");
+            } else if(flow.style.left === "-700px") {
+                flow.style.left = "0px";
+                indis[2].classList.add("on");
+                indis[1].classList.remove("on");
+                indis[0].classList.remove("on");
+            }
+        })
+        nextbtn.addEventListener("click", function() {
+            if(flow.style.left === "0px") {
+                flow.style.left = "-700px";
+                indis[0].classList.add("on");
+                indis[1].classList.remove("on");
+                indis[2].classList.remove("on");
+            } else if(flow.style.left === "-700px") {
+                flow.style.left = "-1400px";
+                indis[1].classList.add("on");
+                indis[0].classList.remove("on");
+                indis[2].classList.remove("on");
+            } else if(flow.style.left === "-1400px") {
+                flow.style.left = "0px";
+                indis[2].classList.add("on");
+                indis[1].classList.remove("on");
+                indis[0].classList.remove("on");
+            }
+        })
+    </script>
+</body>
+</html>

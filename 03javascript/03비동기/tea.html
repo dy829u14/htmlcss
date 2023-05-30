@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        body {
+            text-align: center;
+            line-height: 1.6;
+        }
+        #header {
+            background-color: blueviolet;
+            color: #fff;
+            padding: 20px;
+        }
+        #display {
+            font-size: 32px;
+            color: blueviolet;
+            padding: 20px;
+        }
+        div {
+            padding: 10px;
+        }
+        button {
+            width: 200px;
+            line-height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">타자게임</div>
+    <div>
+        <div id="display">display</div>
+        <div><input type="text" id="inputtext"></div>
+        <div>남은시간 :<span id="time">0</span> 초
+             점수 :<span id="score">0</span> 점
+        </div>
+        <div>
+            <button id="btn">게임시작</button>
+        </div>
+    </div>
+    <script>
+        //게임시작버튼을 누르면 게임시작
+        //화면에 보이는 단어 변경
+        //시간은 20초 할당, 0초가 되면 게임종료
+        //input에 값이 변경되면 input값과 단어가 일치하는지 체크
+        //일치하면 점수를 10점 더해준다
+
+        //1.변수 지정
+
+        //DOM선택
+        let btn = document.querySelector("button");
+        let timeDisplay = document.querySelector("#time");
+        let scoreDisplay = document.querySelector("#score");
+        let input = document.querySelector("input");
+        let wordDisplay = document.querySelector("#display");
+
+        //점수, 시간, 시간인터벌, 글자배열, 게임중체크
+        let score = 0;
+        let time = 10;
+        let isPlaying;
+        let timer;
+        let words = ["aaa","bbb","ccc","ddd","eee","fff","ggg"];
+        let randomNum;
+
+        //클릭하면 게임실행
+        btn.addEventListener("click",function() {
+            gameStart();
+        })
+        input.addEventListener("input", function() {
+            if(input.value == wordDisplay.innerHTML && isPlaying) {
+                score += 10;
+                scoreDisplay.innerHTML = score;
+                input.value = "";
+                //랜덤값
+                randomNum = Math.floor(Math.random()*words.length);
+                //화면 단어 변경
+                wordDisplay.innerHTML = words[randomNum];
+            }
+        })
+        function gameStart() {
+            //게임중이면 리턴
+            if(isPlaying) {return;}
+            isPlaying = true;
+            //랜덤값
+            randomNum = Math.floor(Math.random()*words.length);
+            //화면 단어 변경
+            wordDisplay.innerHTML = words[randomNum];
+            //버튼 내용 변경
+            btn.innerHTML = "게임중";
+            timeDisplay.innerHTML = time;
+            scoreDisplay.innerHTML = score;
+            timer = setInterval(function(){
+                //타임 화면 출력
+                timeDisplay.innerHTML = time;
+                time > 0? time-- : isPlaying = false;
+                //isplaying이 false면 인터벌 종료
+                if(!isPlaying) {
+                    btn.innerHTML = "게임종료";
+                    btn.disabled = true;
+                    input.value = "";
+                    clearInterval(timer);
+                }
+            },1000)
+        }
+
+    </script>
+</body>
+</html>
