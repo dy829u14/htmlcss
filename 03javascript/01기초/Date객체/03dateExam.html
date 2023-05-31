@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {padding: 0; margin: 0; box-sizing: border-box;}
+        #wrap {
+            width: 70%;
+            height: 70vh;
+            margin: 100px auto;
+            border: 2px solid palevioletred;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        header {
+            background-color: palevioletred;
+            color: #fff;
+            width: 100%;
+            height: 25%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 30px;
+        }
+        #main {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #main div:nth-child(1) {
+            margin: 60px 0;
+        }
+        #main div:nth-child(2) {
+            display: flex;
+            margin: 60px 0;
+        }
+        #main div:nth-child(2) button {
+            background-color: palevioletred;
+            color: #fff;
+            border-radius: 5px;
+            line-height: 50px;
+            padding: 5px 20px;
+            margin: 0 20px;
+            border: none;
+        }
+        input {
+            border: none;
+            border-bottom: 1px solid palevioletred;
+            line-height: 40px;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <h2>기념일</h2>
+            <p>사귄 날짜를 입력하세요</p>
+        </header>
+        <div id="main">
+            <div id="inputs">
+                <input type="text" id="year" name="year">
+                <input type="text" id="month" name="month">
+                <input type="text" id="date" name="date">
+            </div>
+            <div id="buttons">
+                <!-- 
+                    커스텀 속성
+                    dataset객체 { key: "date", value: "50"} 
+                    dataset.value -> 50
+                    dataset.key -> date
+                    let obj = {name: "A", age: 20}
+                    obj.age -> 20
+                    obj.name -> A
+                -->
+                <button data-key="date" data-value="50">50일</button>
+                <button data-key="date" data-value="100">100일</button>
+                <button data-key="date" data-value="today">D + Day</button>
+            </div>
+            <div id="text"></div>
+        </div>
+    </div>
+    <script>
+        const yearInput = document.querySelector("#year");
+        const monthInput = document.querySelector("#month");
+        const dateInput = document.querySelector("#date");
+        const text = document.querySelector("#text");
+        const btns = document.querySelector("#buttons");
+
+        btns.addEventListener("click", function(e) {
+            let btnValue = e.target.dataset.value;
+            if(!getInputValue()) {
+                return;
+            }else {
+                //입력한 날짜의 데이트 객체 생성
+                let eventObj = getInputValue();
+                let eventDate = new Date(eventObj.year, eventObj.month-1, eventObj.date);
+                if(btnValue==="today") {
+                    //현재날짜의 값을 가진 객체를 생성
+                    let toDay = new Date();
+                    //밀리초 단위로 변경
+                    let toDayTime = toDay.getTime();
+                    let eventTime = eventDate.getTime();
+                    let re = Math.floor((toDayTime-eventTime) / (1000*60*60*24));
+                    text.innerHTML = `D + ${re}`;
+                }else {
+                    eventDate.setDate(eventDate.getDate()+Number(btnValue));
+                    text.innerHTML = `${btnValue}일 : ${eventDate.getFullYear()}년 ${eventDate.getMonth()+1}월 
+                    ${eventDate.getDate()}일`;
+                }
+            }
+        })
+
+        //인풋값을 체크하여 인풋값이 유효하면 인풋값을 객체형태로 반환하는 함수
+        function getInputValue() {
+            //input값이 빈칸이라면 종료
+            if(!yearInput.value || !monthInput.value || !dateInput.value) {
+                alert("날짜를 입력해주세요!");
+                return;
+            }
+            //입력한 내용에 문자도 포함됐을때
+            //isNaN(값) 값이 NaN이면 true 아니면 false
+            //NaN == num (X)
+            if(isNaN(Number(yearInput.value)) || isNaN(Number(monthInput.value)) || isNaN(Number(dateInput.value))) {
+                alert("숫자만 입력해주세요");
+                yearInput.value = "";
+                monthInput.value = "";
+                dateInput.value = "";
+                return;
+            }
+            let eventDay = {
+                year: Number(yearInput.value),
+                month: Number(monthInput.value),
+                date: Number(dateInput.value)
+            }
+            return eventDay;
+        }
+    </script>
+</body>
+</html>

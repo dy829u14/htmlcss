@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p id="time"></p>
+        <p>
+            <span id="hour"></span>
+            <span id="minute"></span>
+            <span id="second"></span>
+        </p>
+    </div>
+    <script>
+        let now = new Date();
+        let nowyear = now.getFullYear();
+        let nowmonth = now.getMonth()+1;
+        let nowdate = now.getDate();
+        
+        now.setDate(now.getDate()-10);
+
+
+        document.querySelector("#time").innerHTML = `오늘은 ${nowyear}년 ${nowmonth}월 ${nowdate}일`;
+
+        setInterval(function(){
+            let now = new Date();
+            hour.innerHTML = now.getHours();
+            minute.innerHTML = now.getMinutes();
+            second.innerHTML = now.getSeconds();
+        },1000)
+        
+
+
+
+    </script>
+</body>
+</html>
