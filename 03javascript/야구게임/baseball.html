@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="js/script.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="intro">
+        <h1>그린아카데미<br>Baseball Game</h1>
+        <button>Game Start!!</button>
+    </div>
+    <div id="wrap">
+        <div id="board">
+            <div id="round">
+                <h2>n회초</h2>
+            </div>
+            <div id="teams">
+                <div><h2>User Team</h2></div>
+                <div><h2>Computer Team</h2></div>
+            </div>
+            <div id="score">
+                <div><h2>0</h2></div>
+                <div><h2>0</h2></div>
+            </div>
+            <div id="minimap">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div id="round-board">
+                <div>
+                    <div id="strike">
+                        <span>S</span>
+                        <strong>0</strong>
+                    </div>
+                    <div id="ball">
+                        <span>B</span>
+                        <strong>0</strong>
+                    </div>
+                </div>
+                <div>
+                    <p>0</p>
+                    <h2>OUT</h2>
+                </div>
+            </div>
+        </div>
+        <div id="commands">
+            <h2>공격/수비</h2>
+            <button type="submit">커맨드1</button>
+            <button type="submit">커맨드2</button>
+        </div>
+        <div id="action-log">
+            <h2>event log title</h2>
+            <ul id="log">
+            </ul>
+        </div>
+    </div>
+    <div id="game">
+        <div data-key="투수"></div>
+        <div data-key="1루"></div>
+        <div data-key="2루"></div>
+        <div data-key="3루"></div>
+        <div data-key="타자"></div>
+    </div>
+    <div id="turn">
+        <h1>공격 턴 입니다</h1>
+    </div>
+</body>
+</html>
