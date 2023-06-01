@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>전체선택 <input type="checkbox" id="allcheck" name="allcheck"></p>
+    <p>사과 <input type="checkbox" value="사과" name="fruit" class="fruit"></p>
+    <p>오렌지 <input type="checkbox" value="오렌지" name="fruit" class="fruit"></p>
+    <p>바나나 <input type="checkbox" value="바나나" name="fruit" class="fruit"></p>
+    <p>
+        <button id="resultbtn">결과 확인</button>
+        <button id="allcheckbtn">전체 선택</button>
+    </p>
+    <p id="text"></p>
+    <script>
+        const allchbtn = document.querySelector("#allcheckbtn");
+        const resultbtn = document.querySelector("#resultbtn");
+        const inputs = document.querySelectorAll(".fruit");
+        const inputallcheck = document.querySelector("#allcheck");
+        allchbtn.addEventListener("click", function() {
+            inputs.forEach(input=>{
+                input.checked = true;
+            })
+        })
+        resultbtn.addEventListener("click", function() {
+            let str = "";
+            inputs.forEach(input=>{
+                //checked가 되어있는지? ""인풋의 값을 더해서 str에 할당
+                //false면 str을 str에 할당
+                str = input.checked ? str + input.value : str;
+            })
+            document.querySelector("#text").innerHTML = str;
+        })
+        inputallcheck.addEventListener("click", function() {
+            if(this.checked) {
+                inputs.forEach(input=>{
+                    input.checked = true;
+                })
+            }else {
+                inputs.forEach(input=>{
+                    input.checked = false;
+                })
+            }
+        })
+    </script>
+</body>
+</html>

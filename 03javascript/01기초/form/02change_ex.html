@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>가격 <input type="text" id="price" name="price"></p>
+    <p>수량
+        <select name="number" id="number">
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+        </select>
+    </p>
+    <p>
+        총가격 <input type="text" id="totalPrice" name="totalPrice">
+    </p>
+    <script>
+        let priceInput = document.querySelector("#price");
+        let selNumber = document.querySelector("#number");
+        let totalPrice = document.querySelector("#totalPrice")
+        priceInput.addEventListener("input", function() {
+            sum();            
+        })
+        selNumber.addEventListener("change", function(){
+            sum();
+        })
+        function sum() {
+            //사용자가 숫자가 아닌 문자를 입력하면 리턴
+            let priceNumber = Number(priceInput.value);
+            if(isNaN(priceNumber)) return;
+            let total = priceNumber*selNumber.value;
+            totalPrice.value = total;
+        }
+    </script>
+</body>
+</html>

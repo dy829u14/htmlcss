@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>주민번호 <input type="text" id="ssn" name="ssn"> - 
+        <input type="text" id="ssn2" name="ssn2">
+    </p>
+    <script>
+        let input1 = document.querySelector("#ssn");
+        let input2 = document.querySelector("#ssn2");
+        input1.addEventListener("input", function(){
+            //입력값의 길이가 6이고 문자가 아닐때
+            if(this.value.length == 6 && !isNaN(Number(this.value))) {
+                input2.focus();
+            }
+        })
+    </script>
+</body>
+</html>

@@ -229,7 +229,7 @@ li{list-style: none;}
     display: none;
 }
 #game>div{
-    transition: 2s;
+    transition: 1s;
 }
 #game>div:nth-child(1){
     position: absolute;
@@ -237,7 +237,7 @@ li{list-style: none;}
     left: 41%;
     width: 45px;
     height: 70px;
-    background: url(../images/pitcher.png) no-repeat;
+    background: url(../images/pitcher2.png) no-repeat;
     background-size: contain;
 }
 #game>div:nth-child(2){
@@ -264,17 +264,117 @@ li{list-style: none;}
     left: 17%;
     width: 45px;
     height: 70px;
-    background: url(../images/zuza.png) no-repeat;
+    background: url(../images/zuza2.png) no-repeat;
     background-size: contain;
 }
 #game>div:nth-child(5){
     position: absolute;
-    bottom: 15%;
-    left: 33%;
+    top: 70%;
+    left: 34%;
     width: 65px;
     height: 73px;
     background: url(../images/taja.png) no-repeat;
     background-size: 100% 100%;
+}
+#game>div:nth-child(6) {
+    position: absolute;
+    top: 48%;
+    left: 41%;
+    background: url(../images/야구공.png) no-repeat;
+    background-size: contain;
+    width: 40px;
+    height: 40px;
+    transition: 0.5s;
+}
+#game>div:nth-child(7) {
+    position: absolute;
+    top: -300px;
+    left: 29%;
+    background: url(../images/STRIKE.png) no-repeat;
+    background-size: contain;
+    width: 400px;
+    height: 300px;
+    opacity: 0;
+}
+#game>div:nth-child(8) {
+    position: absolute;
+    top: -300px;
+    left: 29%;
+    background: url(../images/BALL.png) no-repeat;
+    background-size: contain;
+    width: 400px;
+    height: 300px;
+    opacity: 0;
+}
+#game>div:nth-child(9) {
+    position: absolute;
+    top: -300px;
+    left: 29%;
+    background: url(../images/FAUL.png) no-repeat;
+    background-size: contain;
+    width: 400px;
+    height: 300px;
+    opacity: 0;
+}
+#game>div:nth-child(10) {
+    position: absolute;
+    top: -300px;
+    left: 29%;
+    background: url(../images/STRIKEOUT.png) no-repeat;
+    background-size: contain;
+    width: 400px;
+    height: 300px;
+    opacity: 0;
+}
+#game>div:nth-child(11) {
+    position: absolute;
+    top: -300px;
+    left: 29%;
+    background: url(../images/FOURBALL.png) no-repeat;
+    background-size: contain;
+    width: 400px;
+    height: 300px;
+    opacity: 0;
+}
+#game>div:nth-child(12) {
+    position: absolute;
+    top: -300px;
+    left: 29%;
+    background: url(../images/FLY.png) no-repeat;
+    background-size: contain;
+    width: 400px;
+    height: 300px;
+    opacity: 0;
+}
+#game>div:nth-child(13) {
+    position: absolute;
+    top: -300px;
+    left: 29%;
+    background: url(../images/GROUNDBALL.png) no-repeat;
+    background-size: contain;
+    width: 400px;
+    height: 300px;
+    opacity: 0;
+}
+#game>div:nth-child(14) {
+    position: absolute;
+    top: -350px;
+    left: 190px;
+    background: url(../images/HOMERUN.gif) no-repeat;
+    background-size: contain;
+    width: 500px;
+    height: 400px;
+    opacity: 0;
+}
+#game>div:nth-child(15) {
+    position: absolute;
+    top: -350px;
+    left: 190px;
+    background: url(../images/ANTA.gif) no-repeat;
+    background-size: contain;
+    width: 500px;
+    height: 400px;
+    opacity: 0;
 }
 #turn{
     width: 1000px;

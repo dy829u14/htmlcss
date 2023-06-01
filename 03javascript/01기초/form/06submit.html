@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <p>아이디 <input type="text" id="userId" name="userId"></p>
+        <p>비밀번호 <input type="text" id="userPass" name="userPass"></p>
+        <p><button type="submit">전송</button></p>
+    </form>
+    <script>
+        let form = document.querySelector("form");
+        let idInput = document.querySelector("#userId");
+        let passInput = document.querySelector("#userPass");
+        form.addEventListener("submit", function(e) {
+            //기본이벤트 제거
+            e.preventDefault();
+            formCheck();
+        })
+        function formCheck() {
+            //아이디 입력시 빈칸이 아니고 글자수가 5개 이상인지 체크
+            if(idInput.value.length >= 5) {
+                console.log(idInput.value);
+            }else {
+                console.log("아이디를 다시 입력하세요");
+            }
+            //패스워드는 5글자 이상이고 숫자를 하나이상 포함해야함
+            if(passInput.value.length >= 5) {
+                let pwArr = passInput.value.split("");
+                let isNum = false;
+                pwArr.array.forEach(ch => {
+                    //문자를 숫자형으로 형변환 했을때 NaN이 아닐때
+                    if(!isNaN(Number(ch))) {
+                        isNum = true;
+                        return;
+                    }
+                });
+                if(isNum) {
+                    console.log("숫자를 포함함");
+                }else {
+                    console.log("숫자가 포함되지 않음");
+                }
+            }else {
+                console.log("비밀번호를 5자 이상 입력하세요");
+            }
+        }
+    </script>
+</body>
+</html>

@@ -75,3 +75,94 @@ turnChk();
 
 // 공격상황
 let random = Math.floor(Math.random()*10)+1;
+
+let bol = document.querySelector("#bol");
+let hitter = document.querySelector("#hitter");
+let ru1 = document.querySelector("#ru1");
+let ru2 = document.querySelector("#ru2");
+let ru3 = document.querySelector("#ru3");
+
+let gameStrike = document.querySelector("#game_strike");
+let gameBall = document.querySelector("#game_ball");
+let gameFaul = document.querySelector("#game_faul");
+let gameStrikeout = document.querySelector("#game_strikeout");
+let gameFourball = document.querySelector("#game_fourball");
+let gameFlyout = document.querySelector("#game_flyout");
+let gameGroundball = document.querySelector("#game_groundball");
+let gameHomerun = document.querySelector("#game_Homerun");
+let gameAnta = document.querySelector("#game_Anta");
+
+bol.addEventListener("click", function() {
+    bol.style.top = "400px";
+});
+hitter.addEventListener("click", function() {
+    hitter.style.left = "630px";
+    hitter.style.top = "230px";
+})
+ru1.addEventListener("click", function() {
+    ru1.style.top = "95px";
+    ru1.style.left = "410px";
+})
+ru2.addEventListener("click", function() {
+    ru2.style.top = "230px";
+    ru2.style.left = "170px";
+})
+ru3.addEventListener("click", function() {
+    ru3.style.top = "365px";
+    ru3.style.left = "410px";
+})
+
+ru1.addEventListener("click", function() {
+    gameStrike.style.opacity = '1';    
+    setTimeout(function() {
+        gameStrike.style.opacity = '0';
+    }, 1500);
+  })
+ru2.addEventListener("click", function() {
+    gameBall.style.opacity = '1';    
+    setTimeout(function() {
+        gameBall.style.opacity = '0';
+    }, 1500);
+})
+ru2.addEventListener("click", function() {
+    gameFaul.style.opacity = '1';    
+    setTimeout(function() {
+        gameFaul.style.opacity = '0';
+    }, 1500);
+})
+ru2.addEventListener("click", function() {
+    gameStrikeout.style.opacity = '1';    
+    setTimeout(function() {
+        gameStrikeout.style.opacity = '0';
+    }, 1500);
+})
+ru2.addEventListener("click", function() {
+    gameFourball.style.opacity = '1';    
+    setTimeout(function() {
+        gameFourball.style.opacity = '0';
+    }, 1500);
+})
+ru2.addEventListener("click", function() {
+    gameFlyout.style.opacity = '1';    
+    setTimeout(function() {
+        gameFlyout.style.opacity = '0';
+    }, 1500);
+})
+ru2.addEventListener("click", function() {
+    gameFroundball.style.opacity = '1';    
+    setTimeout(function() {
+        gameGroundball.style.opacity = '0';
+    }, 1500);
+})
+board.addEventListener("click", function() {
+    gameHomerun.style.opacity = '1';    
+    setTimeout(function() {
+        gameHomerun.style.opacity = '0';
+    }, 2500);
+})
+board.addEventListener("click", function() {
+    gameAnta.style.opacity = '1';    
+    setTimeout(function() {
+        gameAnta.style.opacity = '0';
+    }, 1500);
+})
