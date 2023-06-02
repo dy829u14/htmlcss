@@ -78,6 +78,7 @@ let random = Math.floor(Math.random()*10)+1;
 
 let bol = document.querySelector("#bol");
 let hitter = document.querySelector("#hitter");
+let pitcher = document.querySelector("#pitcher");
 let ru1 = document.querySelector("#ru1");
 let ru2 = document.querySelector("#ru2");
 let ru3 = document.querySelector("#ru3");
@@ -92,77 +93,84 @@ let gameGroundball = document.querySelector("#game_groundball");
 let gameHomerun = document.querySelector("#game_Homerun");
 let gameAnta = document.querySelector("#game_Anta");
 
-bol.addEventListener("click", function() {
+function bolthrow() {
     bol.style.top = "400px";
-});
-hitter.addEventListener("click", function() {
+}
+function hittermove() {
     hitter.style.left = "630px";
-    hitter.style.top = "230px";
-})
-ru1.addEventListener("click", function() {
+    hitter.style.top = "230px";    
+}
+function ru1move() {
     ru1.style.top = "95px";
     ru1.style.left = "410px";
-})
-ru2.addEventListener("click", function() {
+}
+function ru2move() {
     ru2.style.top = "230px";
     ru2.style.left = "170px";
-})
-ru3.addEventListener("click", function() {
+}
+function ru3move() {
     ru3.style.top = "365px";
     ru3.style.left = "410px";
-})
+}
 
-ru1.addEventListener("click", function() {
+function strikeEffect() {
     gameStrike.style.opacity = '1';    
     setTimeout(function() {
         gameStrike.style.opacity = '0';
     }, 1500);
-  })
-ru2.addEventListener("click", function() {
+  }
+function ballEffect() {
     gameBall.style.opacity = '1';    
     setTimeout(function() {
         gameBall.style.opacity = '0';
     }, 1500);
-})
-ru2.addEventListener("click", function() {
+}
+function faulEffect() {
     gameFaul.style.opacity = '1';    
     setTimeout(function() {
         gameFaul.style.opacity = '0';
     }, 1500);
-})
-ru2.addEventListener("click", function() {
+}
+function strikeOutEffect() {
     gameStrikeout.style.opacity = '1';    
     setTimeout(function() {
         gameStrikeout.style.opacity = '0';
     }, 1500);
-})
-ru2.addEventListener("click", function() {
+}
+function fourballEffect() {
     gameFourball.style.opacity = '1';    
     setTimeout(function() {
         gameFourball.style.opacity = '0';
     }, 1500);
-})
-ru2.addEventListener("click", function() {
+}
+function flyoutEffect() {
     gameFlyout.style.opacity = '1';    
     setTimeout(function() {
         gameFlyout.style.opacity = '0';
     }, 1500);
-})
-ru2.addEventListener("click", function() {
-    gameFroundball.style.opacity = '1';    
+}
+function groundballEffect() {
+    gameGroundball.style.opacity = '1';    
     setTimeout(function() {
         gameGroundball.style.opacity = '0';
     }, 1500);
-})
-board.addEventListener("click", function() {
+}
+function homerunEffect() {
     gameHomerun.style.opacity = '1';    
     setTimeout(function() {
         gameHomerun.style.opacity = '0';
     }, 2500);
-})
-board.addEventListener("click", function() {
+}
+function antaEffect() {
     gameAnta.style.opacity = '1';    
     setTimeout(function() {
         gameAnta.style.opacity = '0';
     }, 1500);
-})
+}
+function colorChange() {
+    hitter.style.backgroundImage = "url('../images/taja2.png')";
+    ru1.style.backgroundImage = "url('../images/zuza2.png')";
+    ru2.style.backgroundImage = "url('../images/zuza2.png')";
+    ru3.style.backgroundImage = "url('../images/zuza2.png')";
+    pitcher.style.backgroundImage = "url('../images/pitcher2.png')";
+}

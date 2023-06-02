@@ -83,11 +83,11 @@ li{list-style: none;}
     color: #fff;
 }
 #score>div:first-child{
-    background: red;
+    background: tomato;
 }
 #score>div:last-child{
     border-top: 1px solid #ccc;
-    background: rgb(15, 15, 143);
+    background: rgb(35, 35, 124);
 }
 #minimap{
     width: 20%;
@@ -229,8 +229,25 @@ li{list-style: none;}
     display: none;
 }
 #game>div{
-    transition: 1s;
+    transition: 0.5s;
 }
+
+#turn{
+    width: 1000px;
+    height: 150px;
+    background:rgba(0, 0, 0, 0.6);
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    display: none;
+}
+#turn h1{
+    color: #fff;
+    font-size: 100px;
+}
+/**/
 #game>div:nth-child(1){
     position: absolute;
     top: 42%;
@@ -248,6 +265,7 @@ li{list-style: none;}
     height: 70px;
     background: url(../images/zuza.png) no-repeat;
     background-size: contain;
+    opacity: 0;
 }
 #game>div:nth-child(3){
     position: absolute;
@@ -257,6 +275,7 @@ li{list-style: none;}
     height: 70px;
     background: url(../images/zuza.png) no-repeat;
     background-size: contain;
+    opacity: 0;
 }
 #game>div:nth-child(4){
     position: absolute;
@@ -266,6 +285,7 @@ li{list-style: none;}
     height: 70px;
     background: url(../images/zuza.png) no-repeat;
     background-size: contain;
+    opacity: 0;
 }
 #game>div:nth-child(5){
     position: absolute;
@@ -375,19 +395,4 @@ li{list-style: none;}
     width: 500px;
     height: 400px;
     opacity: 0;
-}
-#turn{
-    width: 1000px;
-    height: 150px;
-    background:rgba(0, 0, 0, 0.6);
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
-    display: none;
-}
-#turn h1{
-    color: #fff;
-    font-size: 100px;
 }
