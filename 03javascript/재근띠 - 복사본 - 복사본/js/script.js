@@ -162,7 +162,7 @@ function turnChk(){
         turn.firstElementChild.innerHTML = "공격 턴 입니다.";
         setTimeout(function(){
             turn.style.display = "none";
-        }, 3000)
+        }, 2000)
         round.firstElementChild.innerHTML = `${roundtext}회초`;
     }else{
         commands.firstElementChild.innerHTML = "수비";
@@ -172,7 +172,7 @@ function turnChk(){
         turn.firstElementChild.innerHTML = "수비 턴 입니다.";
         setTimeout(function(){
             turn.style.display = "none";
-        }, 3000)
+        }, 2000)
         round.firstElementChild.innerHTML = `${roundtext}회말`;
     }
 }
@@ -198,29 +198,38 @@ function turnChk(){
                     strikeOut();
                     ballOut();
                     homerunEffect();
+                    homerunMove();
                     console.log("스트라이크 홈런")
-                }else if(random1<0.2){
+                }else if(random1<0.3){
                     newLi("파울");
                     faulEffect()
                     faulcount();
-                }else if(random1<0.4){
+                }else if(random1<0.5){
                     let aaa = Math.random();
                     aaa<0.5 ? (newLi("땅볼아웃"),outCount(),strikeOut(),ballOut(),groundballEffect()) : (newLi("플라이아웃"),outCount(),strikeOut(),ballOut(),flyoutEffect());
                 }else{
-                    random1<0.8 ? (newLi("안타"),run(),strikeOut(),ballOut(),antaEffect()) : (newLi("헛스윙"),strikeCount());
+                    random1<0.9 ? (newLi("안타"),run(),strikeOut(),ballOut(),antaEffect()) : (newLi("헛스윙"),strikeCount(),strikeEffect());
                 }
                 boardRefresh();
             }else{
-                if(random1<0.05){
+                if(random1<0.1){
                     newLi("홈런");
                     plus_score();
                     outoutout();
                     strikeOut();
                     homerunEffect();
+                    homerunMove();
                     ballOut();
                     console.log("ball homerun")
+                }else if(random1<0.3){
+                    newLi("파울");
+                    faulEffect()
+                    faulcount();
+                }else if(random1<0.6){
+                    let aaa = Math.random();
+                    aaa<0.5 ? (newLi("땅볼아웃"),outCount(),strikeOut(),ballOut(),groundballEffect()) : (newLi("플라이아웃"),outCount(),strikeOut(),ballOut(),flyoutEffect());
                 }else{
-                    random1<0.3 ? newLi("안타",run(),strikeOut(),ballOut(),antaEffect()) : (newLi("헛스윙"),strikeCount());
+                    random1<0.6 ? newLi("안타",run(),strikeOut(),ballOut(),antaEffect()) : (newLi("헛스윙"),strikeCount(),strikeEffect());
                 }
             }
             boardRefresh();
@@ -233,9 +242,16 @@ function turnChk(){
                 strikeOut();
                 ballOut();
                 homerunEffect();
-                
+                homerunMove();
+            }else if(random<0.3){
+                newLi("파울");
+                faulEffect()
+                faulcount();
+            }else if(random<0.6){
+                let aaa = Math.random();
+                aaa<0.5 ? (newLi("땅볼아웃"),outCount(),strikeOut(),ballOut(),groundballEffect()) : (newLi("플라이아웃"),outCount(),strikeOut(),ballOut(),flyoutEffect());
             }else{
-                random<0.1 ? (newLi("안타"),run(),strikeOut(),ballOut(),antaEffect()) : (newLi("헛스윙"),strikeCount());
+                random<0.8 ? (newLi("안타"),run(),strikeOut(),ballOut(),antaEffect()) : (newLi("헛스윙"),strikeCount(),strikeEffect());
             }
             boardRefresh();
         }
@@ -245,7 +261,7 @@ function turnChk(){
         bolthrow();
         let random = Math.random();
         if(isUserTurn){
-            random<0.5 ? (newLi("스트라이크"),strikeCount()) : (newLi("볼"),ballCount());
+            random<0.5 ? (newLi("스트라이크"),strikeCount(),strikeEffect()) : (newLi("볼"),ballCount());
         }else{
             newLi("볼던짐");
             if(random<0.1){
@@ -255,6 +271,14 @@ function turnChk(){
                 strikeOut();
                 ballOut();
                 homerunEffect();
+                homerunMove();
+            }else if(random1<0.3){
+                newLi("파울");
+                faulEffect()
+                faulcount();
+            }else if(random1<0.6){
+                let aaa = Math.random();
+                aaa<0.5 ? (newLi("땅볼아웃"),outCount(),strikeOut(),ballOut(),groundballEffect()) : (newLi("플라이아웃"),outCount(),strikeOut(),ballOut(),flyoutEffect());
             }else if(random<0.3){
                 newLi("안타");
                 antaEffect()
@@ -277,8 +301,6 @@ function strikeCount(){
         strikeOut();
         ballOut();
         outCount();
-    }else{
-        strikeEffect()
     }
 }
 function strikeOut(){
@@ -326,6 +348,9 @@ function outCount(){
         }
         change();
         turnChk();
+        ru1.style.opacity = 0;
+        ru2.style.opacity = 0;
+        ru3.style.opacity = 0;
     }
 }
 function outCountOut(){
@@ -438,9 +463,9 @@ function ru1move() {
             ru1.style.left = "";
             setTimeout(function(){
                 ru1.style.opacity = 1;
-            },1000) 
-        },1000)  
-    },1000)
+            },500) 
+        },500)  
+    },500)
 }
 function ru2move() {
     ru2.style.top = "230px";
@@ -452,9 +477,9 @@ function ru2move() {
             ru2.style.left = "";
             setTimeout(function(){
                 ru2.style.opacity = 1;
-            },1000) 
-        },1000)  
-    },1000)
+            },500) 
+        },500)  
+    },500)
 }
 function ru3move() {
     ru3.style.top = "365px";
@@ -466,9 +491,52 @@ function ru3move() {
             ru3.style.left = "";
             setTimeout(function(){
                 ru3.style.opacity = 1;
-            },1000) 
-        },1000)  
-    },1000)
+            },500) 
+        },500)  
+    },500)
+}
+function homerunMove(){
+    hitter.style.left = "630px";
+    hitter.style.top = "230px";
+    ru1.style.top = "95px";
+    ru1.style.left = "410px";
+    ru2.style.top = "230px";
+    ru2.style.left = "170px";
+    ru3.style.top = "365px";
+    ru3.style.left = "410px";
+    setTimeout(function(){
+        hitter.style.top = "95px";
+        hitter.style.left = "410px";
+        ru1.style.top = "230px";
+        ru1.style.left = "170px";
+        ru2.style.top = "365px";
+        ru2.style.left = "410px";
+        setTimeout(function(){
+            hitter.style.top = "230px";
+            hitter.style.left = "170px";
+            ru1.style.top = "365px";
+            ru1.style.left = "410px";
+            setTimeout(function(){
+                hitter.style.top = "365px";
+                hitter.style.left = "410px";
+                setTimeout(function(){
+                    ru1.style.opacity = 0;
+                    ru2.style.opacity = 0;
+                    ru3.style.opacity = 0;
+                    setTimeout(function(){
+                        hitter.style.left = "";
+                        hitter.style.top = "";
+                        ru1.style.top = "";
+                        ru1.style.left = "";
+                        ru2.style.top = "";
+                        ru2.style.left = "";
+                        ru3.style.top = "";
+                        ru3.style.left = "";
+                    },500)                                                            
+                },500)
+            },500)
+        },500)
+    },500)
 }
 
 //이펙트
@@ -492,10 +560,12 @@ function faulEffect() {
     }, 1000);
 }
 function strikeOutEffect() {
-    gameStrikeout.style.opacity = '1';    
-    setTimeout(function() {
-        gameStrikeout.style.opacity = '0';
-    }, 1000);
+    setTimeout(function(){
+        gameStrikeout.style.opacity = '1'; 
+        setTimeout(function() {
+            gameStrikeout.style.opacity = '0';
+        }, 1000);
+    },1000)           
 }
 function fourballEffect() {
     gameFourball.style.opacity = '1';    

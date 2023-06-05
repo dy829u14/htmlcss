@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let foods = ["🍕","🍔","🍟","🌭","🍿"];
+        let [aa,bb,...cc] = foods;
+        console.log(aa);
+        console.log(bb);
+        console.log(cc);
+
+        let str1 = "green";
+        let str2 = "blue";
+        [str1, str2] = [str2, str1];
+        console.log(str1+", "+str2);
+
+        let user = { name: "green", age: 20 };
+        // let name = user.name;
+        // let age = user.age;
+        let {name,age} = user;
+        console.log(name+", "+age);
+        let {name:n, age:a} = user;
+        console.log(n+", "+a);
+
+        //함수에서 구조분해할당
+        let dog1 = { name:"구름", age: 4, color: "흰색"};
+        function dogPrint({name,age,color}) {
+            // let name = obj.name;
+            // let age = obj.age;
+            // let color = obj.color;
+            console.log(name+", "+age+", "+color);
+        }
+
+        dogPrint(dog1);
+
+        function getPerson() {
+            return {
+                firstName : "john",
+                lastName : "Doe",
+                age : 37,
+                email : "john@gmail.com"
+            }
+        }
+        let {firstName, lastName} = getPerson();
+        console.log(firstName);
+        console.log(lastName);
+
+    </script>
+</body>
+</html>

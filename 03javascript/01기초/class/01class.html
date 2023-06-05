@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //클래스 선언
+        class Person {
+            //생성자
+            constructor(name, age){
+                this.name = name;
+                this.age = age;
+            }
+            speak() {
+                console.log("hello");
+            }
+        }
+        const green = new Person("그린",28);
+        console.log(green);
+        //메소드 호출
+        green.speak();
+
+        //학생 클래스 생성
+        class Student {
+            constructor(name, age, score) {
+                this.name = name;
+                this.age = age;
+                this.score = score;
+            }
+        }
+        const students = [
+            new Student("A", 29, 75),
+            new Student("B", 30, 60),
+            new Student("C", 26, 80),
+            new Student("D", 27, 88),
+            new Student("E", 28, 76),
+        ]
+        console.log(students);
+
+    </script>
+</body>
+</html>

@@ -83,7 +83,7 @@ li{list-style: none;}
     color: #fff;
 }
 #score>div:first-child{
-    background: tomato;
+    background: red;
 }
 #score>div:last-child{
     border-top: 1px solid #ccc;
