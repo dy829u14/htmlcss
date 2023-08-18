@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>야구통합</title>
+    <!-- <link rel="stylesheet" href="./reset.css"> -->
+    <style>
+
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        img{vertical-align: top; width: 100%;}
+        a{text-decoration: none; color: inherit;}
+        li{list-style: none}
+        h1, h2, h3, h4, h5, h6{font-weight: normal;}
+        address{font-style: normal;}
+        table{border-collapse: collapse;}
+
+        @font-face {
+        font-family: 'LINESeedKR-Bd';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_11-01@1.0/LINESeedKR-Bd.woff2') format('woff2');
+        font-weight: 700;
+        font-style: normal;
+    }
+
+        @font-face {
+        font-family: 'GmarketSansMedium';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+        @font-face {
+        font-family: 'GongGothicMedium';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+        @font-face {
+        font-family: 'NEXONFootballGothicBA1';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXONFootballGothicBA1.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+        body{
+            width: 100%;
+            height: 100vh;
+            background: url(./images/KakaoTalk_20230531_143428544.jpg) center center no-repeat;
+            background-size: cover;
+            font-family: 'GmarketSansMedium';
+        }
+
+        #wrap{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        button{
+            border: 3px solid #fff;
+            background:none;
+            border-radius: 20px;
+            color: #fff;
+        }
+        button:hover{
+            /* background-color: #F98289; */
+            outline: none;
+            border: none;
+        }
+/* 스타트이전 */
+        #blackbg {
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            left: 0;
+            top: 0;
+            background-color: rgba(0,0,0,0.6);
+            opacity: 1;
+            transition: 0.5s;
+        }
+        #blackbg.on {
+            opacity: 1;
+        }
+        #start{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            z-index: 999;
+        }
+        #start h2{
+            font-size: 48px;
+            font-family: 'NEXONFootballGothicBA1';
+        }
+        #start p{
+            font-size: 13px;
+            animation-name: twinkleP;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-fill-mode: forwards;
+        } 
+        @keyframes twinkleP {
+            0%{
+                opacity: 0;
+            }
+            50%{
+                opacity: 0;
+            }
+            51%{
+                opacity: 1;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+        #start button{
+            margin-top: 20px;
+            width: 100%;
+            height: 100%;
+            border: 3px solid #fff;
+            background:none;
+            border-radius: 20px;
+            color: #fff;
+            font-size: 28px;
+            font-family: 'GongGothicMedium';
+        }
+        #start button:hover{
+            background-color: #84CCFC;
+            outline: none;
+            border: none;
+        }
+/* 스타트이전 */
+
+
+        #LED {
+            margin: 20px auto;
+            text-align: center;
+            width: 80%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: rgba(17, 17, 17, 0.815);
+            color: yellow;
+            font-size: 24px;
+            font-weight: 300;
+            opacity: 0;
+            font-family: 'LINESeedKR-Bd';
+        }
+        #LED > div {
+            width: 9%;
+        }
+        #disball, #disstlike, #disout {
+            display: flex;
+            align-items: center;
+        }
+        #LED > div > div {
+            padding: 10px 0;
+            height: 6vh;
+        }
+        #disball div {
+            text-align: center;
+            width: 15px;
+            height: 15px;
+            padding: 10px;
+            margin: 6px;
+            border: none;
+            /* background-color: rgb(9, 255, 0); */
+            border-radius: 50%;
+        }
+        #disstlike div {
+            text-align: center;
+            width: 15px;
+            height: 15px;
+            padding: 10px;
+            margin: 6px;
+            border: none;
+            /* background-color: rgb(238, 255, 0); */
+            border-radius: 50%;
+        }
+        #disout div {
+            text-align: center;
+            width: 15px;
+            height: 15px;
+            padding: 10px;
+            margin: 6px;
+            border: none;
+            /* background-color: rgb(255, 0, 0); */
+            border-radius: 50%;
+        }
+        #sum > div {
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+
+        #stage{
+            width: 100%;
+            height: 100%;
+            
+        }
+        #toout > div > div{
+            font-size: 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: blueviolet;
+            margin: 0 8px;
+        }
+
+
+        /* person */
+
+
+        #person div{
+            position: absolute;
+            background-size: contain;
+            font-size: 0;
+        }
+        #person-투수{
+            width: 15%;
+            height: 15%;
+            top: 38%;
+            left: 42%;
+            background:url(./images/투수_red.png) center center no-repeat;
+        }
+        #person-타자{
+            width: 15%;
+            height: 17%;
+            top: 62%;
+            left: 45%;
+            background:url(./images/타자1_blue.png) center center no-repeat;
+
+        }
+        #person-포수 {
+            width: 12%;
+            height: 12%;
+            top: 77%;
+            left: 44%;
+            background:url(./images/포수_red.png) center center no-repeat;
+        }
+        #person-1루{
+            width: 10%;
+            height: 10%;
+            top: 38%;
+            left: 75%;
+            background:url(./images/스탠딩_blue.png) center center no-repeat;
+            display: none;
+
+        }
+        #person-2루{
+            width: 10%;
+            height: 10%;
+            top: 26%;
+            left: 44%;
+            background:url(./images/스탠딩_blue.png) center center no-repeat;
+            display: none;
+
+        }
+        #person-3루{
+            width: 10%;
+            height: 10%;
+            top: 38%;
+            left: 15%;;
+            background:url(./images/스탠딩_blue.png) center center no-repeat;
+            display: none;
+
+        }
+
+        #person-타자.run1 {
+            background-image: url("./images/run1.gif");
+            background-repeat : no-repeat;
+            background-size: contain;
+        }
+        #person-1루.run2 {
+            background-image: url("./images/run2.gif");
+            background-repeat : no-repeat;
+            background-size: contain;
+
+        }
+        #person-2루.run3 {
+
+            background-image: url("./images/run2.gif");
+            background-repeat : no-repeat;
+            background-size: contain;
+
+        }
+        #person-3루.run_home {
+
+            background-image: url("./images/run1.gif");
+            background-repeat : no-repeat;
+            background-size: contain;
+
+        }
+
+        .go1 { 
+            position: relative;
+            transform: translate(160%, -160%) ;
+            transition: 2.0s
+        } 
+        .go2 { 
+            position: relative;
+            transform: translate(-290%, -130%) ;
+            transition: 2.0s;
+        }
+        .go3 { 
+            position: relative;
+            transform: translate(-280%, 120%) ;
+            transition: 2.0s;
+        }
+        .go_home { 
+            position: relative;
+            transform: translate(580px, 320px) ;
+            transition: 2.0s;
+        }
+
+
+        /* person */
+        
+
+        /* button_투수*/
+        #choose{
+            position: absolute;
+            bottom: 12%;
+            right: 4%;
+            width: 450px;
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            opacity: 0;
+            z-index: 998;
+        }
+        #choose button{
+            width: 48%;
+            height: 100%;
+            font-family: 'GongGothicMedium';
+            font-size: 17px;
+            
+        }
+        /* button */
+
+        /* message */
+        #text {
+            position: absolute;
+            bottom: 3%;
+            left: 3%;
+            width: 490px;
+            height: 240px;
+            background-color: rgb(0, 0, 0, 0.5);
+            color: #fff;
+            opacity: 0;
+        }
+        #text span {
+            position: absolute;
+            left: 3%;
+            top: 7%;
+        }
+        #message{
+            position: absolute;
+            bottom: 3%;
+            left: 3%;
+            width: 460px;
+            height: 220px;
+            line-height: 30px;
+            padding: 0 25px;
+            color: #fff;
+            overflow: auto;
+            z-index: 2;
+
+        }
+
+        #message p {
+            color:yellow;
+        }
+        /* message */
+        #allimg {
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            left: 0;
+            top: 0;
+            overflow: hidden;
+            z-index: 0;
+        }
+        #homerun_set {
+            background-image: url("./images/homerun_text.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 0%;
+            height: 0px;
+            top: 65%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(1.1);
+            transition: 0.5s;
+            text-align: center;
+            position: absolute;
+        }
+        #out_set {
+            background-image: url("./images/out_text.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 0%;
+            height: 0px;
+            top: 540px;
+            left: 700px;
+            position: absolute;
+        }
+        #hit_set {
+            background-image: url("./images/hit_text.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 0%;
+            height: 0px;
+            top: 520px;
+            left: 1100px;
+            position: absolute;
+        }
+        #plus_set {
+            background-image: url("./images/score+_text.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 0px;
+            height: 0px;
+            top: 220px;
+            right:350px;
+            position: absolute;
+        }
+        #change {
+            background-image: url("./images/change_text.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 0px;
+            height: 0px;
+            top: 35%;
+            left: 43%;
+            position: absolute;
+        }
+
+    </style>
+    <script defer src="./야구_스크립트.js"></script>
+</head>
+<body>
+    <div id="start">
+        <h2>Press Start</h2>
+        <p><span>▶</span>게임을 시작하려면 버튼을 누르세요<span>◀</span></p>
+        <button>게임시작</button>
+    </div>
+    <div id="wrap">
+        <div id="LED">
+            <div>팀명
+                <div>user</div>
+                <div>com</div>
+            </div>
+            <div>1회
+                <div></div>
+                <div></div>
+            </div>
+            <div>2회
+                <div></div>
+                <div></div>
+            </div>
+            <div>3회
+                <div></div>
+                <div></div>
+            </div>
+            <div>4회
+                <div></div>
+                <div></div>
+            </div>
+            <div>5회
+                <div></div>
+                <div></div>
+            </div>
+            <div>6회
+                <div></div>
+                <div></div>
+            </div>
+            <div>7회
+                <div></div>
+                <div></div>
+            </div>
+            <div>8회
+                <div></div>
+                <div></div>
+            </div>
+            <div>9회
+                <div></div>
+                <div></div>
+            </div>
+            <div id="sum">계
+                <div>0</div>
+                <div>0</div>
+            </div>
+            <div id="count">
+                <div id="disball">
+                    B
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div id="disstlike">
+                    S
+                    <div></div>
+                    <div></div>
+                </div>
+                <div id="disout">
+                    O
+                    <div></div>
+                    <div></div>
+                    <div></div>
+            </div>
+            </div>
+        </div>
+        <div id="stage">
+            <div id="person">
+                <div id="person-투수">
+                    사람
+                </div>
+                <div id="person-타자">
+                    사람
+                </div>
+                <div id="person-포수">
+                    사람
+                </div>
+                <div id="person-1루" >
+                    사람
+                </div>
+                <div id="person-2루"  >
+                    사람
+                </div>
+                <div id="person-3루"  >
+                    사람
+                </div>
+
+            </div>
+        </div>
+        <div id="text">
+            <span>▶</span>
+            <div id="message">
+            </div>
+        </div>
+        <div id="choose">
+                <button>strike</button>
+                <button>ball</button>
+        </div>
+    </div>
+    <div id="allimg">
+        <div id="homerun_set"></div>
+        <div id="out_set"></div>
+        <div id="hit_set"></div>
+        <div id="plus_set"></div>
+        <div id="change"></div> 
+    </div>    
+    <div id="blackbg"></div>
+</body>
+</html>

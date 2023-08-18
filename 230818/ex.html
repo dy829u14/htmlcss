@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //객체타입 {key:value, key2:value}
+        //배열타입 [1,2,3,4]
+        //배열 메소드
+        //1. map 배열안의 요소의 내용이 변경 (요소값 변경)
+        //2. filter 배열에서 새로운 배열 리턴
+
+        let numbers = [1,2,3,4,5,6];
+        //원본배열요소의 값에 1씩 더한 값을 가진 배열을 리턴
+        let number2 = numbers.map(num=>num+1);
+        //[2,3,4,5,6,7]
+        let number3 = numbers.filter(num=>num >=5);
+        //[5,6]
+        console.log(number2);
+        console.log(number3);
+
+        let users = [
+            {id:1, name:"user1",score:60},
+            {id:2, name:"user2",score:70},
+            {id:3, name:"user3",score:80},
+            {id:4, name:"user4",score:90}
+        ]
+        let scores = users.map(user=> user.score);
+        //[60,70,80,90]
+        let highusers = users.filter(user=>user.score >= 70);
+        //[
+        //{id:2, name:"user2",score:70},
+        //{id:3, name:"user3",score:80},
+        //{id:4, name:"user4",score:90}
+        //]
+        let users2 = users.map(user=>{
+            return {...user, score: user.score+10}
+        });
+        console.log(users2);
+        //스프레드 구문(펼치기)
+        let dog = { name: "콩이", age: 3 }
+        dog = {
+            ...dog,
+            name: "뽀미",
+            color: "흰색"
+        }
+        console.log(dog);
+        let fruits = ["사과","딸기","포도"];
+        fruits = [...fruits, "바나나"];
+        let fruits2 = fruits.concat("키위");
+        console.log(fruits);
+        console.log(fruits2);
+
+        let obj = {
+            inputs : {
+                username: "green",
+                email: "green@naver.com"
+            },
+            users : [
+                {id: 1, username: "a", email: "a@naver.com"},
+                {id: 2, username: "b", email: "b@naver.com"}
+            ]
+        }
+        //키는 문자열, 값은 모든 데이터 1
+        let obj2 = {aa:{a:1,b:2}, bb:[1,2,3,{a:1,b:2}]}
+        obj2.bb[3].b
+
+        let obj3 = {
+            ...obj,
+            inputs: {
+                ...obj.inputs,
+                email: "blue@naver.com"
+            }
+        }
+
+        //화살표 함수
+        function myFun(num){
+            return num+10;
+        }
+        //1. 매개변수가 하나일때 () 생략가능
+        //2. 실행문이 한줄일때 {} 생략가능
+        //3. {}생략했을때 return 생략
+        //화살표 함수의 실행문이 한줄이면 return문이다
+        let myFun2 = num => num+10;
+        
+
+        let result = myFun(5);
+        console.log(result);
+
+        let keyname = "abc";
+        let name = "green";
+        let obj4 = {[keyname]:name}
+        let color = "흰색";
+        console.log(obj4);
+        //{color: color} 일때 생략해서 사용가능
+        //{color}
+        let obj5 = {color};
+        console.log(obj5);
+    </script>
+</body>
+</html>

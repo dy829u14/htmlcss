@@ -1,0 +1,285 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+li {
+    list-style: none;
+}
+body {
+    width: 100%;
+    max-width: 1200px;
+    height: 840px;
+    margin: auto;
+    overflow: hidden;
+}
+.circle {
+    width: 24px;
+    height: 24px;
+    margin-left: 5px;
+    border: 1px solid #Ccc;
+    border-radius: 50%;
+}
+
+/* header 영역 시작*/
+header {
+    width: 1200px;
+    height: 150px;
+    margin-top: 20px;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+    z-index: 10;
+}
+/* 왼쪽 전광판*/
+#left {
+    width: 12%;
+    height: 150px;
+    padding: 10px 30px;
+}
+#leftbox {
+    width: 120px;
+    height: 130px;
+    border-radius: 10px;
+    background-color: rgb(51, 51, 51, 0.95);
+    color: #fff;
+}
+#leftbox > div {
+    height: 32px;
+}
+#inning {
+    padding-left: 5px;
+}
+#left ul {
+    display: inline-block;
+    margin-top: 5px;
+    padding-left: 5px;
+}
+#left ul li {
+    display: flex;
+    line-height: 24px;
+    margin-top: 5px
+}
+#st1 {
+    margin-left: 10px;
+}
+#ba1 {
+    margin-left: 9px;
+}
+/* 오른쪽 전광판*/
+#right {
+    width: 20%;
+    padding-top: 10px;
+}
+#rightbox {
+    width: 202px;
+    height: 130px;
+    padding-top: 25px;
+    border-radius: 10px;
+    background-color: rgb(51, 51, 51, 0.95);
+    color: #fff;
+}
+#right li {
+    padding-left: 5px;
+    padding-bottom: 20px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+}
+#right li p {
+    width: 60%;
+}
+#right .inning_arrow {
+    margin-left: 5px;
+    margin-top: 2px;
+    width: 20%;
+    background: url("../images/arrow.png") no-repeat;
+    opacity: 0;
+}
+#right .score {
+    width: 20%;
+    padding-right: 10px;
+    display: inline-block;
+    text-align: right;
+}
+.btnSpecial {
+    margin-left: 25px;
+    margin-top: 10px;
+    background: rgb(51, 51, 51, 0.95);
+    color: red;
+    font-weight: bold;
+}
+/* header 영역 끝 */
+
+
+/* section 영역 시작 */
+section {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+#player {
+    width: 80px;
+    height: 80px;
+    position: fixed;
+}
+#hitter {
+    width: 80px;
+    height: 66px;
+    background: url("../images/타자.png") no-repeat;
+    margin-left: 510px;
+    margin-top: -150px;
+    z-index: 10;
+}
+#pitcher {
+    width: 80px;
+    height: 66px;
+    background: url("../images/투수.png") no-repeat;
+    margin-left: 560px;
+    margin-top: -190px;
+}
+#runner1 {
+    width: 80px;
+    height: 66px;
+    background: url("../images/주자.png") no-repeat;
+    margin-left: 900px;
+    margin-top: -100px;
+    opacity: 0;
+}
+#runner2 {
+    width: 80px;
+    height: 66px;
+    background: url("../images/주자.png") no-repeat;
+    margin-left: 580px;
+    margin-top: -170px;
+    opacity: 0;
+}
+#runner3 {
+    width: 80px;
+    height: 66px;
+    background: url("../images/주자.png") no-repeat;
+    margin-left: 280px;
+    margin-top: 40px;
+    opacity: 0;
+}
+.effectbox {
+    position: fixed;
+    opacity: 1;
+}
+.effect {
+    width: 485px;
+    height: 235px;
+    margin-left: 350px;
+    margin-top: -830px;
+}
+.textbox {
+    width: 550px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 315px;
+    font-size: 30px;
+    border-radius: 10px;
+    background-color: rgb(51, 51, 51, 0.9);
+    color: #fff;
+    overflow: hidden;
+    opacity: 0;
+}
+.textbox2 {
+    width: 550px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    margin-top: 0px;
+    margin-left: 315px;
+    font-size: 30px;
+    border-radius: 10px;
+    background-color: rgb(51, 51, 51, 0.9);
+    color: #fff;
+    overflow: hidden;
+    opacity: 0;
+}
+/* section 영역 끝 */
+
+/* footer 영역 시작*/
+footer {
+    position: absolute;
+    bottom: 150px;
+    z-index: 10;
+    display: flex;
+    height: 100%;
+}
+button {
+    font-size: 24px;
+    width: 150px;
+    height: 60px;
+    border-radius: 10px;
+    outline: 0;
+}
+
+.btn1 {
+    margin-left: 300px;
+    margin-top: 870px;
+    opacity: 0;
+}
+
+.btn2 {
+    margin-left: 300px;
+    margin-top: 870px;
+    opacity: 0;
+}
+
+/* on */
+#runner1.on {
+    opacity: 1;
+}
+#runner2.on {
+    opacity: 1;
+}
+#runner3.on {
+    opacity: 1;
+}
+#inning_arrow1.on {
+    opacity: 1;
+}
+#inning_arrow2.on {
+    opacity: 1;
+}
+.effect.homerun {
+    background: url("../images/homerun.png") no-repeat;
+}
+.effect.hit {
+    background: url("../images/타격.png") no-repeat;
+}
+.effect.out {
+    background: url("../images/아웃.png") no-repeat;
+}
+.effect.strikeout {
+    background: url("../images/삼진.png") no-repeat;
+}
+.effect.win {
+    background: url("../images/win.gif") no-repeat;
+}
+.effect.lose {
+    background: url("../images/lose.gif") no-repeat;
+}
+.effect.draw {
+    background: url("../images/draw.gif") no-repeat;
+}
+.textbox.on {
+    opacity: 1;
+}
+.textbox2.on {
+    opacity: 1;
+}
+.btn1.on {
+    opacity: 1;
+}
+.btn2.on {
+    opacity: 1;
+}
+.btnSpecial.remove {
+    opacity: 0;
+}

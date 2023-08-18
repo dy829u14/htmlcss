@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 전체 게임화면 -->
+    <div id="title">
+        <img id="img1" src="images/야구게임_타이틀.png" alt=""> 
+        <div id="hitturn">
+            <p id="ak">공격 차례</p>
+        </div>
+    </div>
+    <div id="header">
+        <div id="time">
+            <p id="timedisplay">2023년 06월 01일 2시 40분 30초</p>
+        </div>
+        <!-- 횟수 보더 -->
+        <div id="round">
+            <h3 id="roundplay">?회 초/말</h3>            
+        </div>   
+    </div>
+
+    <div id="main">
+
+        <div id="homerun"></div>
+
+        <!-- 아웃 보더 -->
+        <div id="out">
+             <div> 
+                <img src="images/볼카운트.png" alt="">
+                <ul>
+                    <li>스트라이크
+                        <span class="s"></span>
+                        <span class="s"></span>
+                    </li>
+                    <li>볼
+                        <span class="b"></span>
+                        <span class="b"></span>
+                        <span class="b"></span>
+                    </li>
+                    <li>아웃
+                        <span class="o"></span>
+                        <span class="o"></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- 투수 타자 보더 -->
+        <div id="player">
+            <div id="bt">
+                타자 :
+                <button id="be">휘두르기</button>
+                <button id="see">지켜보기</button>
+            </div>
+            <div id="pi">
+                투수 :
+                <button id="sta">스트라이크</button>
+                <button id="baa">볼</button>
+            </div>
+        </div>
+
+        <!-- 스코어 보더 -->
+        <div id="score">
+            <div><img src="images/점수판.png" alt="">
+                <div id="score_board">
+                    <span id="comscore">0</span>
+                    <span id="text">컴퓨터 vs 사용자</span>
+                    <span id="userscore">0</span>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div>
+        <!-- 다이아몬드 루 보더 -->
+        <div id="dia">
+            <div><img src="images/투수.png" alt=""></div>
+            <div><img src="images/타자.png" alt=""></div>
+
+            <div class="a"></div>
+            <div class="a"><img src="images/주자.png" alt=""></div>
+            <div class="a"><img src="images/주자.png" alt=""></div>
+            <div class="a"><img src="images/주자.png" alt=""></div>
+
+            <!-- 심판 이미지 -->
+            <div>
+                <img id="img1" src="images/심판.png" alt="">
+                <img id="img2" src="images/말풍선.png" alt="">
+                <p id="display">쓰리아웃 공수 교대</p> 
+            </div>
+            
+        </div>
+    </div>
+    <script src="./Js/game.js"></script>
+</body>
+</html>

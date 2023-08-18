@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css"/>
+    <script defer src="./js/script.js"></script>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <div id="left">
+                <div id="leftbox">
+                    <!-- 이닝 표시 -->
+                    <div>
+                        <div id="inning"><span id="inningNum">1</span><span id="inningHoe">회</span></div>
+                    </div>
+                    <!-- S,B,O 표시 존 -->
+                    <ul>
+                        <li>S <div class="circle strike" id="st1"></div><div class="circle strike" id="st2"></div></li>
+                        <li>B <div class="circle ball" id="ba1"></div ><div class="circle ball" id="ba2"></div><div class="circle ball" id="ba3"></div></li>
+                        <li>O <div class="circle out" id="out1"></div><div class="circle out" id="out1"></div></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="right">
+                <div id="rightbox">
+                    <ul>
+                        <li><span class="inning_arrow" id="inning_arrow1"></span><p>챗GPT</p><span class="score" id="cpuscore">0</span></li>
+                        <li><span class="inning_arrow" id="inning_arrow2"></span><p>휴먼</p><span class="score" id="userscore">0</span></li>
+                    </ul>
+                    <div>
+                        <button class="btnSpecial">마구</button>
+                    </div>
+                </div>
+            </div>      
+        </header>
+        <section>
+            <!-- 배경 이미지 -->
+            <div id="ground"><img src="./images/BASEBALL PARK.jpg" alt=""></div>
+            <div>
+                <div id="player">
+                    <div id="hitter"></div>
+                    <div id="pitcher"></div>
+                    <div id="runner1"></div>
+                    <div id="runner2"></div>
+                    <div id="runner3"></div>
+                </div>
+            </div>
+            <div class="effectbox">
+                <div class="effect"></div>
+                <div class="textbox"></div>
+                <div class="textbox2"></div>
+            </div>
+        </section>
+        <footer>
+            <div>
+                <button class="btn1">스트라이크</button>
+            </div>
+            <div>
+                <button class="btn2">볼</button>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
